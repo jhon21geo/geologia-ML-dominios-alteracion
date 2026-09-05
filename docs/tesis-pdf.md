@@ -1,14 +1,11 @@
-# Tesis completa (PDF)
+# Tesis completa — solo lectura
 
-Visor del documento original (160 páginas). Si el navegador no embebe el
-archivo, [descárgalo aquí](Tesis.pdf).
+Visor de las 160 páginas originales. Navegación con **Anterior / Siguiente** o las flechas del teclado. No incluye descarga ni edición.
 
-<div class="pdf-frame">
-  <object data="Tesis.pdf" type="application/pdf" width="100%" height="92vh">
-    <p>Tu navegador no muestra PDF embebidos. <a href="Tesis.pdf">Abrir Tesis.pdf</a>.</p>
-  </object>
-</div>
-
-<style>
-.pdf-frame object { min-height: 85vh; border: 1px solid #ccc; }
-</style>
+<iframe
+  title="Tesis en modo lectura"
+  src="../assets/tesis-lector.html"
+  width="100%"
+  height="88vh"
+  style="border:1px solid #444; min-height:85vh; background:#111;"
+></iframe>

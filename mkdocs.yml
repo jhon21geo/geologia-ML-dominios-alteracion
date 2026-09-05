@@ -4,7 +4,7 @@ site_author: Jhonatan Paul Mallma Espinoza
 site_url: https://jhon21geo.github.io/geologia-ML-dominios-alteracion/
 repo_url: https://github.com/jhon21geo/geologia-ML-dominios-alteracion
 repo_name: jhon21geo/geologia-ML-dominios-alteracion
-edit_uri: edit/main/docs/
+edit_uri: ""
 copyright: Mallma Espinoza, J. P. (2026). Universidad Nacional de Ingeniería.
 theme:
   name: material
@@ -32,7 +32,6 @@ theme:
     - navigation.tracking
     - search.suggest
     - search.highlight
-    - content.code.copy
     - toc.follow
 
 nav:
