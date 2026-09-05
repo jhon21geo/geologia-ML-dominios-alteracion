@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+
+# Notebooks / tests
+.ipynb_checkpoints/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Pipeline outputs (las figuras de documentación viven en docs/assets)
+outputs/
+site/
+
+# OS
+.DS_Store
+Thumbs.db

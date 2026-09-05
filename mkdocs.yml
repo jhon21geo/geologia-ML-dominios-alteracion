@@ -1,22 +1,54 @@
-site_name: Delimitación de Dominios Geológicos de Alteración - Tesis UNI
+site_name: Dominios de alteración con ML
+site_description: Metodología abierta para delimitar dominios hidrotermales con SWIR, geoquímica y machine learning.
 site_author: Jhonatan Paul Mallma Espinoza
+repo_url: https://github.com/jhon21geo/geologia-ML-dominios-alteracion
+repo_name: jhon21geo/geologia-ML-dominios-alteracion
+edit_uri: edit/main/docs/
 theme:
   name: material
   language: es
   palette:
-    primary: indigo
-    accent: blue
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
   features:
     - navigation.expand
     - navigation.sections
     - navigation.top
     - search.suggest
     - search.highlight
+    - content.code.copy
+    - toc.follow
 
 nav:
-  - Resumen Ejecutivo: index.md
-  - 1. Introducción: 01-introduccion.md
+  - Inicio: index.md
+  - 1. Planteamiento: 01-introduccion.md
   - 2. Metodología: 02-metodologia.md
-  - 3. Análisis Espectral & Geoquímico: 03-analisis-espectral.md
-  - 4. Machine Learning & Resultados: 04-modelamiento-ml.md
-  - 5. Conclusiones & Recomendaciones: 05-conclusiones.md
+  - 3. Espectro y geoquímica: 03-analisis-espectral.md
+  - 4. Machine learning: 04-modelamiento-ml.md
+  - 5. Conclusiones: 05-conclusiones.md
+  - Replicar el pipeline: 06-replicacion.md
+  - Opiniones y contribuciones: 07-contribuciones.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - tables
+  - toc:
+      permalink: true

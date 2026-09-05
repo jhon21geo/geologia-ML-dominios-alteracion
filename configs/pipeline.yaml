@@ -1,0 +1,43 @@
+# Perfil publicado (Mallma, 2026, Tablas 19–22) y perfil más estable.
+
+data:
+  dir: data/synthetic
+  n_holes: 24
+  seed: 42
+
+preprocess:
+  completeness_threshold: 0.80
+  clip_percentile: 0.99
+  scaler: zscore
+
+unsupervised:
+  pca_components: 5
+  kmeans_k: 5
+  hierarchical_method: ward
+
+supervised:
+  test_size: 0.20
+  profile: thesis   # thesis | robust
+  target: MOD_ALT
+
+hyperparams_thesis:
+  random_forest:
+    n_estimators: 10
+    max_features: 8
+    max_depth: 4
+    min_samples_split: 5
+    class_weight: balanced
+  knn:
+    n_neighbors: 5
+    metric: euclidean
+    weights: distance
+  neural_network:
+    hidden_layer_sizes: [100]
+    activation: relu
+    solver: adam
+    alpha: 0.0001
+    max_iter: 400
+  svm:
+    C: 1.0
+    kernel: rbf
+    max_iter: 100

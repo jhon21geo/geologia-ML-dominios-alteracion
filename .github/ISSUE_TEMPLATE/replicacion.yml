@@ -1,0 +1,38 @@
+name: Replicación en otro proyecto
+description: Reporta una replicación del pipeline en tus propios datos.
+title: "[replicación] "
+labels: ["replicacion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Comparte resultados **anonimizados**. No subas coordenadas de unidades
+        productivas ni tablas geoquímicas reales.
+  - type: input
+    id: yacimiento
+    attributes:
+      label: Tipo de sistema (sin nombre de unidad)
+      placeholder: "epitermal alta sulfuración / pórfido / skarn / otro"
+    validations:
+      required: true
+  - type: input
+    id: n
+    attributes:
+      label: Escala (sondajes × intervalos, aproximado)
+  - type: dropdown
+    id: mejor
+    attributes:
+      label: Mejor modelo en tu replicación
+      options: [random_forest, knn, neural_network, svm, otro]
+  - type: textarea
+    id: metricas
+    attributes:
+      label: Métricas
+      placeholder: "F1 macro, AUC, accuracy, comentarios de zonación"
+    validations:
+      required: true
+  - type: textarea
+    id: cambios
+    attributes:
+      label: Qué adaptaste
+      description: Minerales distintos, k distinto, perfil robust, etc.

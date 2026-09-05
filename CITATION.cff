@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "Delimitación de dominios de alteración hidrotermal con SWIR, geoquímica y machine learning"
+message: "Si usas este software o la metodología, cita la tesis y este repositorio."
+type: software
+authors:
+  - family-names: Mallma Espinoza
+    given-names: Jhonatan Paul
+    orcid: "https://orcid.org/0009-0007-5912-5915"
+repository-code: "https://github.com/jhon21geo/geologia-ML-dominios-alteracion"
+license: MIT
+version: 0.1.0
+date-released: "2026-09-05"
+preferred-citation:
+  type: thesis
+  authors:
+    - family-names: Mallma Espinoza
+      given-names: Jhonatan Paul
+  title: "Delimitación de los dominios geológicos de alteración desde firmas espectrales y geoquímica mediante el empleo de machine learning"
+  year: 2026
+  institution:
+    name: Universidad Nacional de Ingeniería
+  thesis-type: Tesis de pregrado
