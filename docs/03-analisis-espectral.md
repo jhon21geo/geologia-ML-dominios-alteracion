@@ -39,7 +39,7 @@ minerales (sección 4.2):
 
 K-Means (k = 5) se corre **sobre muestras**. No coincide 1:1 con los seis
 `MOD_ALT`: skarn y propilítica comparten clorita; los óxidos viven sobre todo
-en VNIR. El etiquetado final mezcla clúster + ensamble + validación 3D.
+en VNIR. El etiquetado final es [asignación con juicio geológico](03-asignacion-dominios.md).
 
 ![PCA de abundancias SWIR en el sintético del repositorio](assets/03_pca_dominios.png)
 

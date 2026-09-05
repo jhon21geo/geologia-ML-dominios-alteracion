@@ -12,6 +12,7 @@ from alteration_ml.preprocess import impute_median_by_hole, prepare_feature_matr
 from alteration_ml.spectral import assemblage_flags, drop_zero_mean_minerals
 from alteration_ml.supervised import split_labeled, train_models
 from alteration_ml.synthetic import generate_synthetic_deposit, write_synthetic_tables
+from alteration_ml.viz import plot_assignment_schema, plot_cluster_vs_domain
 from alteration_ml.unsupervised import fit_kmeans, fit_pca, mineral_hierarchical_clusters
 
 
@@ -94,3 +95,13 @@ def test_supervised_better_than_chance(tiny_deposit: pd.DataFrame) -> None:
     tree_like = table[table["modelo"].isin(["random_forest", "knn"])]
     assert (tree_like["accuracy"] > 0.35).all()
     assert table["f1"].max() > 0.35
+
+
+def test_assignment_figures(tiny_deposit: pd.DataFrame, tmp_path) -> None:
+    ready, z_cols, _ = prepare_feature_matrix(tiny_deposit, feature_kind="spectral")
+    _, labels, _ = fit_kmeans(ready[z_cols].to_numpy(), n_clusters=5)
+    ready["cluster_k5"] = labels
+    out = plot_cluster_vs_domain(ready, tmp_path / "cvd.png")
+    schema = plot_assignment_schema(tmp_path / "schema.png")
+    assert out.exists() and out.stat().st_size > 1000
+    assert schema.exists() and schema.stat().st_size > 1000

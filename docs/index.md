@@ -20,8 +20,7 @@ sulfuración con transiciones a pórfido/skarn). Los datos del repositorio son
 **sintéticos** y replican ensambles, dominios y algoritmos.
 
 **Leer:** [Resumen y abstract](00-resumen.md) ·
-[Introducción](00b-introduccion-tesis.md) ·
-[Cap. I](01-introduccion.md) ·
+[Asignación de dominios](03-asignacion-dominios.md) ·
 [PDF completo](tesis-pdf.md)
 
 **Código:** [Replicar el pipeline](06-replicacion.md) ·

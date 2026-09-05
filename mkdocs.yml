@@ -42,6 +42,7 @@ nav:
     - 1. Planteamiento: 01-introduccion.md
     - 2. Marco teórico: 02-marco-teorico.md
     - 3. Metodología: 02-metodologia.md
+    - 3b. Asignación de dominios: 03-asignacion-dominios.md
     - 4. Espectro y geoquímica: 03-analisis-espectral.md
     - 5. Resultados de ML: 04-modelamiento-ml.md
     - 6. Conclusiones: 05-conclusiones.md

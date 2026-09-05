@@ -19,8 +19,9 @@ flowchart LR
 2. **EDA.** Variables categóricas (`aiMineral1`, `VNIRMinerals`) y numéricas
    (13 scores SWIR).
 3. **No supervisado.** PCA, dendrograma y K-Means (k = 5) **sobre espectro**.
-4. **Segmentación.** El geólogo valida clústeres y define `MOD_ALT` (seis
-   dominios). En la tesis eso se apoyó en Leapfrog.
+4. **Segmentación (crítica).** El geólogo valida clústeres y define `MOD_ALT`.
+   El algoritmo propone; **no etiqueta solo**. Ver
+   [Asignación de dominios](03-asignacion-dominios.md).
 5. **Supervisado.** 80 % / 20 % estratificado sobre tramos etiquetados;
    comparación RF, k-NN, MLP y SVM **sobre geoquímica**.
 6. **Predicción 3D.** El mejor modelo etiqueta el resto de intervalos.
@@ -51,7 +52,17 @@ Protocolo (sección 3.10):
 La variable objetivo es `MOD_ALT`. Las coordenadas **no** entran al
 clasificador (evitar fuga espacial).
 
-## 3.4 Seis dominios (sección 3.12.2)
+## 3.4 Asignación de dominios (algoritmo + geólogo)
+
+Esta etapa corre **a la par del juicio geológico**. PCA y K-Means ordenan la
+nube espectral; el dominio (`MOD_ALT`) se firma cuando el ensamble mineral
+cuadra con el logueo y con la continuidad 3D. Un clúster puede partirse en
+dos dominios, o dos clústeres fusionarse (p. ej. ArgAvd y ArgAvd_2).
+
+La guía ilustrada está en
+[Asignación de dominios](03-asignacion-dominios.md).
+
+![Esquema: clustering + geólogo](assets/13_asignacion_esquema.png)
 
 | Código | Dominio | Criterio mineralógico |
 | --- | --- | --- |

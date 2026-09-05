@@ -88,6 +88,14 @@ def run_pipeline(
         ),
         "map_pred": viz.plot_map_xy(predicted, fig_dir / "11_planta_prediccion.png", color_col="best_pred"),
         "section_pred": viz.plot_section(predicted, fig_dir / "12_seccion_prediccion.png", color_col="best_pred"),
+        "assign_schema": viz.plot_assignment_schema(fig_dir / "13_asignacion_esquema.png"),
+        "assign_rules": viz.plot_assignment_rules(fig_dir / "14_asignacion_reglas.png"),
+        "cluster_vs_domain": viz.plot_cluster_vs_domain(work, fig_dir / "15_cluster_vs_dominio.png"),
+        "pca_dual": viz.plot_pca_cluster_and_domain(
+            scores, work["cluster_k5"], work[TARGET_COLUMN], fig_dir / "16_pca_cluster_y_dominio.png"
+        ),
+        "diagnostic": viz.plot_diagnostic_minerals(work, fig_dir / "17_minerales_diagnostico.png"),
+        "hole_logs": viz.plot_hole_assignment_logs(work, fig_dir / "18_sondajes_cluster_vs_dominio.png"),
     }
     for name, res in results.items():
         figures[f"cm_{name}"] = viz.plot_confusion(
@@ -119,6 +127,12 @@ def run_pipeline(
         "10_confusion_mejor.png",
         "11_planta_prediccion.png",
         "12_seccion_prediccion.png",
+        "13_asignacion_esquema.png",
+        "14_asignacion_reglas.png",
+        "15_cluster_vs_dominio.png",
+        "16_pca_cluster_y_dominio.png",
+        "17_minerales_diagnostico.png",
+        "18_sondajes_cluster_vs_dominio.png",
     ]
     for name in snapshot:
         src = fig_dir / name
