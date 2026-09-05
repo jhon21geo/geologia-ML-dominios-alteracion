@@ -31,13 +31,13 @@
 
 ## Qué hace este visor
 
-Resume la tesis para lectura pública. El [PDF completo](tesis-pdf.md) sigue
+Resume la tesis para lectura pública. El [PDF (págs. 1–151)](tesis-pdf.md) sigue
 disponible. El [código](06-replicacion.md) replica el método sin publicar la
 unidad de calibración.
 
 <div class="siguiente" markdown>
 
-**Para cerrar la lectura:** [PDF completo](tesis-pdf.md) ·
+**Para cerrar la lectura:** [PDF (págs. 1–151)](tesis-pdf.md) ·
 [Probar sin Python](09-orange-colab.md) ·
 [Dejar una opinión](07-contribuciones.md)
 

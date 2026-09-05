@@ -5,6 +5,7 @@ type: software
 authors:
   - family-names: Mallma Espinoza
     given-names: Jhonatan Paul
+    email: jhonatangeo21@gmail.com
     orcid: "https://orcid.org/0009-0007-5912-5915"
 repository-code: "https://github.com/jhon21geo/geologia-ML-dominios-alteracion"
 license: MIT

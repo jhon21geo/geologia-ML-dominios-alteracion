@@ -6,6 +6,9 @@ con datos sintéticos y la repliquen en sus propios proyectos**.
 Si no programas en Python: usa **Orange** o **Google Colab**
 ([guía](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/)).
 
+Contacto del autor: [jhonatangeo21@gmail.com](mailto:jhonatangeo21@gmail.com) ·
+[LinkedIn](https://www.linkedin.com/in/geomin).
+
 ## Cómo participar
 
 1. Abre un [issue](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues) con la plantilla adecuada:

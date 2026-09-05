@@ -22,6 +22,12 @@ puedan discutirlo y llevarlo a sus proyectos** sin pedir acceso a una unidad.
 Orange (lienzo) o Google Colab:
 https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/
 
+## Contacto
+
+- Correo: [jhonatangeo21@gmail.com](mailto:jhonatangeo21@gmail.com)
+- LinkedIn: [linkedin.com/in/geomin](https://www.linkedin.com/in/geomin)
+- GitHub: [jhon21geo](https://github.com/jhon21geo/geologia-ML-dominios-alteracion)
+
 ## Qué es útil en una opinión
 
 - ¿El dendrograma de *minerales* aporta algo que no dé K-Means sobre muestras?

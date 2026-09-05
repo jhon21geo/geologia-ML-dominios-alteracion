@@ -57,7 +57,7 @@ nav:
     - 5. Resultados de ML: 04-modelamiento-ml.md
     - 6. Conclusiones: 05-conclusiones.md
     - Referencias: 08-referencias.md
-    - PDF completo (160 pp.): tesis-pdf.md
+    - PDF (págs. 1–151): tesis-pdf.md
   - Probar el método:
     - Orange y Google Colab: 09-orange-colab.md
     - Replicar en Python: 06-replicacion.md
@@ -86,5 +86,9 @@ markdown_extensions:
 
 extra:
   social:
+    - icon: fontawesome/solid/envelope
+      link: mailto:jhonatangeo21@gmail.com
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/geomin
     - icon: fontawesome/brands/github
       link: https://github.com/jhon21geo/geologia-ML-dominios-alteracion

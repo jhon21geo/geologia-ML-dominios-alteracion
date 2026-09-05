@@ -16,6 +16,14 @@ Jhonatan Paul Mallma Espinoza · Asesor: MSc. César Augusto Mendoza Tarazona<br
 Ingeniero Geólogo · FIGMM · Universidad Nacional de Ingeniería · Lima, 2026
 </p>
 
+<p class="contacto">
+<a href="mailto:jhonatangeo21@gmail.com">jhonatangeo21@gmail.com</a>
+·
+<a href="https://www.linkedin.com/in/geomin">LinkedIn</a>
+·
+<a href="https://orcid.org/0009-0007-5912-5915">ORCID</a>
+</p>
+
 </div>
 
 **Idea central:** el clustering propone grupos; el geólogo los convierte en
@@ -65,7 +73,7 @@ El visor no hay que leerlo de cabo a rabo. Elige un camino:
 
     ---
 
-    Capítulos condensados, figuras del flujo y el PDF de 160 páginas en
+    Capítulos condensados, figuras del flujo y el PDF (páginas 1–151) en
     solo lectura.
 
     [:octicons-arrow-right-24: Abrir el visor](guia.md)
@@ -115,6 +123,12 @@ flowchart LR
 
 ORCID del autor: [0009-0007-5912-5915](https://orcid.org/0009-0007-5912-5915).
 Asesor: [0009-0009-5452-3636](https://orcid.org/0009-0009-5452-3636).
+
+## Contacto
+
+- Correo: [jhonatangeo21@gmail.com](mailto:jhonatangeo21@gmail.com)
+- LinkedIn: [linkedin.com/in/geomin](https://www.linkedin.com/in/geomin)
+- GitHub: [jhon21geo](https://github.com/jhon21geo)
 
 Sitio publicado:
 [jhon21geo.github.io/geologia-ML-dominios-alteracion](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/).[^url]

@@ -5,10 +5,10 @@ hide:
 
 # Cómo leer este visor
 
-Esto **no** es el PDF de 160 páginas puesto en vertical. Es una versión
-resumida para entender el método: qué problema ataca, cómo se firman los
-dominios y qué algoritmo conviene. El [PDF completo](tesis-pdf.md) queda para
-quien quiera el texto original.
+Esto **no** es el PDF puesto en vertical. Es una versión resumida para
+entender el método: qué problema ataca, cómo se firman los dominios y qué
+algoritmo conviene. El [PDF (págs. 1–151)](tesis-pdf.md) queda para quien
+quiera el texto original.
 
 !!! tip "Si solo tienes diez minutos"
     1. [Resumen](00-resumen.md) — el argumento entero.
@@ -40,7 +40,7 @@ flowchart TD
   D --> E{¿Quieres profundidad?}
   E -->|Sí| F[Introducción, marco, espectro]
   E -->|Probar| G[Orange / Colab]
-  F --> H[PDF de 160 páginas]
+  F --> H[PDF págs. 1–151]
 ```
 
 Los capítulos 1, 2 y 4 (planteamiento, marco, espectro) son **fondo**. Sirven

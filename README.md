@@ -19,9 +19,9 @@ publicados, para que cualquiera pueda ejecutar, criticar y adaptar el método.
 
 Empieza por el [mapa de lectura](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/guia/):
 qué página responde a qué pregunta, la distinción clúster ≠ dominio, y cómo
-probar el método en Orange o Colab. El PDF de 160 páginas queda en solo
-lectura. No uses `jhonatanmallma.github.io` (esa cuenta no sirve este
-repositorio).
+probar el método en Orange o Colab. El PDF (páginas 1–151) queda en solo
+lectura, con zoom a la rueda del ratón. No uses `jhonatanmallma.github.io`
+(esa cuenta no sirve este repositorio).
 
 ## Qué resuelve
 
@@ -96,9 +96,15 @@ tests/
 ## Documentación
 
 - **Visor de lectura (tesis resumida):** [jhon21geo.github.io/geologia-ML-dominios-alteracion](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/)
-- PDF original: [`docs/Tesis.pdf`](docs/Tesis.pdf)
+- PDF en el visor (págs. 1–151): [`docs/Tesis.pdf`](docs/Tesis.pdf)
 - Cómo aplicar el método a *tus* sondajes: [docs/06-replicacion.md](docs/06-replicacion.md)
 - **Sin programar:** [Orange y Google Colab](docs/09-orange-colab.md)
+
+## Contacto
+
+- Correo: [jhonatangeo21@gmail.com](mailto:jhonatangeo21@gmail.com)
+- LinkedIn: [linkedin.com/in/geomin](https://www.linkedin.com/in/geomin)
+- GitHub: [jhon21geo](https://github.com/jhon21geo)
 
 ## Opiniones de terceros
 
