@@ -1,6 +1,7 @@
 # Referencias seleccionadas
 
-Listado abreviado. La tesis completa cita el conjunto en el PDF.
+Listado abreviado. La tesis completa cita el conjunto en el
+[PDF de 160 páginas](tesis-pdf.md).
 
 Abdi, H., & Williams, L. J. (2010). Principal component analysis. *WIREs Computational Statistics, 2*(4), 433–459.
 

@@ -1,8 +1,8 @@
 # Replicar el pipeline
 
-¿No usas Python a diario? Empieza por
-**[Orange o Google Colab](09-orange-colab.md)**. Esta página es el camino con
-código local.
+!!! tip "¿No usas Python a diario?"
+    Empieza por **[Orange o Google Colab](09-orange-colab.md)**. Esta página es
+    el camino con código en tu máquina.
 
 ## En este repositorio
 
@@ -65,3 +65,10 @@ print(metrics_table({n: evaluate_model(m, split.X_test, split.y_test) for n, m i
 
 No subas a GitHub tablas reales. En el issue de replicación basta el tipo de
 sistema, el tamaño de muestra y las métricas.
+
+<div class="siguiente" markdown>
+
+**Siguiente:** [Opiniones y réplicas](07-contribuciones.md) si ya corriste el
+flujo, o [Orange y Colab](09-orange-colab.md) si aún no.
+
+</div>

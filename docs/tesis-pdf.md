@@ -1,6 +1,15 @@
+---
+hide:
+  - toc
+---
+
 # Tesis completa — solo lectura
 
-Visor de las 160 páginas originales. Navegación con **Anterior / Siguiente** o las flechas del teclado. No incluye descarga ni edición.
+Las **160 páginas** originales, en el visor. Usa **Anterior / Siguiente** o las
+flechas del teclado. No hay botón de descarga ni de edición.
+
+Si buscas el argumento condensado, vuelve al
+[mapa de lectura](guia.md) o al [resumen](00-resumen.md).
 
 <iframe
   title="Tesis en modo lectura"

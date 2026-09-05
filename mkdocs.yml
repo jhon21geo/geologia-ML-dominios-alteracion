@@ -1,5 +1,5 @@
 site_name: Tesis — Dominios de alteración con ML
-site_description: Visor de lectura de la tesis resumida de Jhonatan Paul Mallma Espinoza (UNI, 2026).
+site_description: Visor de lectura de la tesis resumida. Empieza por el mapa de lectura, luego los seis dominios y Random Forest.
 site_author: Jhonatan Paul Mallma Espinoza
 site_url: https://jhon21geo.github.io/geologia-ML-dominios-alteracion/
 repo_url: https://github.com/jhon21geo/geologia-ML-dominios-alteracion
@@ -27,46 +27,62 @@ theme:
   features:
     - navigation.footer
     - navigation.instant
+    - navigation.instant.progress
     - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
+    - navigation.path
     - search.suggest
     - search.highlight
     - toc.follow
+    - content.tabs.link
+    - content.tooltips
+
+extra_css:
+  - stylesheets/extra.css
 
 nav:
-  - Portada: index.md
-  - Visor de lectura:
+  - Inicio: index.md
+  - Leer la tesis:
+    - Cómo leer este visor: guia.md
     - Resumen y abstract: 00-resumen.md
     - Introducción: 00b-introduccion-tesis.md
     - 1. Planteamiento: 01-introduccion.md
     - 2. Marco teórico: 02-marco-teorico.md
     - 3. Metodología: 02-metodologia.md
-    - 3b. Asignación de dominios: 03-asignacion-dominios.md
+    - 3b. El geólogo asigna los dominios: 03-asignacion-dominios.md
     - 4. Espectro y geoquímica: 03-analisis-espectral.md
     - 5. Resultados de ML: 04-modelamiento-ml.md
     - 6. Conclusiones: 05-conclusiones.md
-    - Referencias seleccionadas: 08-referencias.md
-    - PDF completo: tesis-pdf.md
-  - Código abierto:
-    - Replicar el pipeline: 06-replicacion.md
+    - Referencias: 08-referencias.md
+    - PDF completo (160 pp.): tesis-pdf.md
+  - Probar el método:
     - Orange y Google Colab: 09-orange-colab.md
-    - Opiniones y contribuciones: 07-contribuciones.md
+    - Replicar en Python: 06-replicacion.md
+    - Opiniones y réplicas: 07-contribuciones.md
 
 markdown_extensions:
   - admonition
   - attr_list
+  - footnotes
   - md_in_html
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
   - tables
   - toc:
       permalink: true
-      toc_depth: 3
+      toc_depth: 2
 
 extra:
   social:

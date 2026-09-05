@@ -25,6 +25,8 @@ flowchart TD
 
 ![Esquema de asignación de dominios](assets/13_asignacion_esquema.png)
 
+<p class="caption">El algoritmo propone grupos; el geólogo acepta, recorta o descarta. Solo entonces existe <code>MOD_ALT</code>.</p>
+
 1. Se calculan clústeres **sin etiqueta**.
 2. Se interpretan con minerales diagnóstico (pirofilita–alunita, mica blanca,
    clorita, hematita, etc.).
@@ -75,6 +77,8 @@ entre taladros se corrigen en esta etapa; no en el Random Forest.
 
 ![Tiras de sondaje: clúster vs MOD_ALT](assets/18_sondajes_cluster_vs_dominio.png)
 
+<p class="caption">Misma malla, dos columnas: clúster (izquierda) frente al dominio firmado (derecha). Los saltos entre taladros se corrigen aquí, no en el Random Forest.</p>
+
 ## Qué pasa después
 
 Los intervalos con `MOD_ALT` firmado son la variable objetivo del
@@ -83,3 +87,10 @@ fase: lo predice más tarde, cuando ya no hay TerraSpec.
 
 Si el sólido 3D (Leapfrog u otro) no cierra, se vuelve al paso 2: no se
 baja la calidad del etiquetado para “subir el accuracy”.
+
+<div class="siguiente" markdown>
+
+**Siguiente:** [Espectro y geoquímica](03-analisis-espectral.md) o, si quieres
+el ranking de algoritmos, [resultados de ML](04-modelamiento-ml.md).
+
+</div>

@@ -1,5 +1,10 @@
 # Capítulo II. Marco teórico (condensado)
 
+!!! note "Para orientarte"
+    Esta página es fondo geológico: cómo se zonifica un epitermal de alta
+    sulfuración y qué minerales “ve” el SWIR. Si buscas el flujo de trabajo,
+    ve directo a [metodología](02-metodologia.md).
+
 ## 2.1 Epitermales de alta sulfuración
 
 Los sistemas HS son hidrotermales someros (< 1,5 km), ligados a magmatismo
@@ -72,3 +77,10 @@ Los intervalos predichos (`holeid`, from–to, dominio) entran a modelamiento
 implícito (Leapfrog u otro). Un *back-flag* contra contactos > 90 % de
 coincidencia espacial fue el criterio de la tesis para dar por estable el
 sólido 3D.
+
+<div class="siguiente" markdown>
+
+**Siguiente:** [Capítulo III. Metodología](02-metodologia.md) — las seis etapas
+del flujo.
+
+</div>

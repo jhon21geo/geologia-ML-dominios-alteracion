@@ -1,5 +1,10 @@
 # Introducción
 
+!!! abstract "En esta página"
+    Por qué el logueo visual ya no alcanza para contornear alteraciones, y qué
+    pretende el flujo espectro + geoquímica + ML. El visor resume; no describe
+    la unidad de calibración.
+
 El avance de las geociencias en este siglo está ligado a transformar volúmenes
 grandes de datos en conocimiento geológico **preciso y oportuno**. Durante
 décadas, la alteración hidrotermal y los dominios se delimitaron con criterios
@@ -23,4 +28,9 @@ el modelo de bloques y mejore la planificación.
     unidad donde se calibró el método. El código público usa un yacimiento
     sintético con los mismos ensambles.
 
-Continuar: [Capítulo I. Planteamiento](01-introduccion.md).
+<div class="siguiente" markdown>
+
+**Siguiente:** [Capítulo I. Planteamiento](01-introduccion.md) — problema,
+objetivos e hipótesis.
+
+</div>

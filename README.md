@@ -17,8 +17,11 @@ publicados, para que cualquiera pueda ejecutar, criticar y adaptar el método.
 **Tesis resumida en línea:**
 [https://jhon21geo.github.io/geologia-ML-dominios-alteracion/](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/)
 
-Ahí están el resumen, los capítulos condensados y el PDF completo. No uses
-`jhonatanmallma.github.io` (esa cuenta no sirve este repositorio).
+Empieza por el [mapa de lectura](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/guia/):
+qué página responde a qué pregunta, la distinción clúster ≠ dominio, y cómo
+probar el método en Orange o Colab. El PDF de 160 páginas queda en solo
+lectura. No uses `jhonatanmallma.github.io` (esa cuenta no sirve este
+repositorio).
 
 ## Qué resuelve
 

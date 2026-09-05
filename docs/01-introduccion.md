@@ -1,5 +1,9 @@
 # Capítulo I. Planteamiento
 
+!!! question "Pregunta general"
+    ¿Cómo la imprecisión en la delimitación de los dominios mineralógicos de las
+    alteraciones impacta en el modelo de estimación del recurso mineral?
+
 ## 1.1 Generalidades
 
 El machine learning se ha masificado en la última década por algoritmos
@@ -68,3 +72,10 @@ favorable el modelo de estimación.
 **Específicas.** Vincular la anomalía espectral al modelo mejora el recurso;
 fortalecer clusters económico-mineralógicos reduce incertidumbre; un algoritmo
 adecuado (en este estudio, Random Forest) mejora la delimitación.
+
+<div class="siguiente" markdown>
+
+**Siguiente:** [Marco teórico](02-marco-teorico.md) (fondo HS/SWIR) o salta a
+[metodología](02-metodologia.md) si ya dominas el contexto.
+
+</div>

@@ -1,0 +1,161 @@
+/* Lectura más cómoda: tipografía, jerarquía y bloques escaneables. */
+
+.md-typeset {
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+
+.md-typeset h1 {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35em;
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.2em;
+  margin-top: 1.7em;
+}
+
+.md-typeset p {
+  margin-block: 0.7em 0.85em;
+}
+
+.md-typeset table {
+  font-size: 0.8rem;
+}
+
+.md-typeset figcaption,
+.md-typeset .caption {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: -0.4em;
+  margin-bottom: 1.2em;
+}
+
+/* Portada */
+.hero {
+  background: linear-gradient(135deg, #0b4a4a 0%, #126e68 55%, #b45309 160%);
+  color: #fff;
+  padding: 1.55rem 1.4rem 1.35rem;
+  border-radius: 14px;
+  margin: 0 0 1.4rem;
+}
+
+.hero h1 {
+  color: #fff !important;
+  border: none;
+  margin: 0 0 0.45rem;
+  font-size: 1.55rem;
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 40rem;
+  margin: 0.35rem 0;
+  font-size: 1.02em;
+}
+
+.hero .meta {
+  margin-top: 0.85rem;
+  font-size: 0.82em;
+  opacity: 0.88;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.7rem 0 1.1rem;
+}
+
+.pills span {
+  display: inline-block;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.pills .argavd { background: #f8d4e4; color: #6b1d42; }
+.pills .fil { background: #dbeafe; color: #1e3a8a; }
+.pills .arg { background: #fde68a; color: #78350f; }
+.pills .pro { background: #bbf7d0; color: #14532d; }
+.pills .sk { background: #e7d5c5; color: #5c3317; }
+.pills .oxd { background: #fdba74; color: #7c2d12; }
+
+.ruta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 0.75rem;
+  margin: 0.6rem 0 1.4rem;
+}
+
+.ruta a {
+  display: block;
+  padding: 0.95rem 1rem 0.9rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  color: inherit !important;
+  text-decoration: none !important;
+  background: var(--md-default-bg-color);
+  height: 100%;
+}
+
+.ruta a:hover {
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 6px 18px rgba(15, 40, 40, 0.1);
+}
+
+.ruta .n {
+  display: inline-block;
+  width: 1.45rem;
+  height: 1.45rem;
+  line-height: 1.45rem;
+  text-align: center;
+  border-radius: 999px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.ruta strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.ruta span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+  font-weight: 400;
+}
+
+.siguiente {
+  margin-top: 2rem;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--md-accent-fg-color);
+  background: var(--md-code-bg-color);
+  border-radius: 0 8px 8px 0;
+}
+
+.siguiente p {
+  margin: 0;
+}
+
+.md-typeset .grid.cards > ul > li {
+  border-radius: 12px;
+}
+
+[data-md-color-scheme="slate"] .hero {
+  background: linear-gradient(135deg, #062e2e 0%, #0f4f4b 60%, #7c3d0a 160%);
+}
+
+[data-md-color-scheme="slate"] .pills .argavd { background: #6b1d42; color: #fce7f3; }
+[data-md-color-scheme="slate"] .pills .fil { background: #1e3a8a; color: #dbeafe; }
+[data-md-color-scheme="slate"] .pills .arg { background: #78350f; color: #fde68a; }
+[data-md-color-scheme="slate"] .pills .pro { background: #14532d; color: #bbf7d0; }
+[data-md-color-scheme="slate"] .pills .sk { background: #5c3317; color: #f5e6d8; }
+[data-md-color-scheme="slate"] .pills .oxd { background: #7c2d12; color: #fed7aa; }

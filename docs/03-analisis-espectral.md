@@ -1,5 +1,11 @@
 # Capítulo IV. Espectro, geoquímica y ensambles
 
+!!! note "Para orientarte"
+    Qué columnas espectrales y químicas realmente armaban dominios, y cuáles
+    se descartaron (mezclas de hasta seis fases, variables con poca
+    completitud). El etiquetado en sí está en
+    [asignación de dominios](03-asignacion-dominios.md).
+
 ## 4.1 Lectura de variables categóricas
 
 `aiMineral1` (mineral SWIR más abundante) y `VNIRMinerals` (óxidos) mostraron
@@ -62,3 +68,12 @@ Firmas típicas usadas para el clasificador supervisado:
 | Oxd | Fe–As altos, S muy bajo |
 
 ![Abundancias espectrales por dominio (sintético)](assets/02_minerales.png)
+
+<p class="caption">En el sintético, cada dominio carga un ensamble distinto. Eso es lo que el geólogo reconoce en el logueo y en sección 3D.</p>
+
+<div class="siguiente" markdown>
+
+**Siguiente:** [Resultados de ML](04-modelamiento-ml.md) — ranking de
+clasificadores (tesis vs sintético).
+
+</div>

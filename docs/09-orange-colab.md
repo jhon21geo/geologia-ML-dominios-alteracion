@@ -5,6 +5,36 @@ Si no programas a diario, **no hace falta una terminal**. La tesis se armó en
 en el navegador). El código Python queda para quien quiera automatizar o
 llevar el método a otro yacimiento.
 
+<div class="grid cards" markdown>
+
+-   :material-view-dashboard-variant: **Orange 3**
+
+    ---
+
+    El mismo lienzo de la tesis. Instalas el programa, cargas el CSV sintético
+    y conectas los widgets.
+
+    [:octicons-arrow-right-24: Cómo armar el lienzo](#orange-como-en-la-tesis)
+
+-   :material-google: **Google Colab**
+
+    ---
+
+    Un clic, cuenta de Google, *Entorno de ejecución → Ejecutar todo*.
+    Ves el ranking RF / red / k-NN / SVM sobre dato sintético.
+
+    [:octicons-arrow-right-24: Abrir el cuaderno](#google-colab-un-clic)
+
+-   :material-console: **Python local**
+
+    ---
+
+    Para pegar el flujo a tus sondajes o contribuir código.
+
+    [:octicons-arrow-right-24: Guía de replicación](06-replicacion.md)
+
+</div>
+
 | Camino | Qué necesitas | Para quién |
 | --- | --- | --- |
 | [Orange](#orange-como-en-la-tesis) | Instalar [Orange 3](https://orangedatamining.com/) (Windows/macOS/Linux) | Quien ya usó el flujo de la tesis o prefiere “cajas y flechas” |

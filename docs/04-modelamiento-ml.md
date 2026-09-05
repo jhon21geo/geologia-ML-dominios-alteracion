@@ -1,5 +1,11 @@
 # Capítulo V. Resultados de machine learning
 
+!!! success "Resultado que debes recordar"
+    **Random Forest** es el clasificador elegido. SVM queda último. Hay *dos*
+    tablas: la de la tesis (Orange, dato real) y la de este repositorio
+    (scikit-learn, dato sintético). No se mezclan las cifras; sí se reproduce
+    el orden.
+
 Hay **dos capas** de cifras. Las de la tesis (Orange, dato real) y las del
 repositorio (scikit-learn, dato sintético). No se deben mezclar.
 
@@ -80,3 +86,10 @@ otro universo, con ruido y transiciones programadas).
   quedan fuera.
 - Mezclas de hasta seis minerales enmascaran fases menores (Al–OH / Fe–OH).
 - El supervisado hereda errores del etiquetado en Leapfrog.
+
+<div class="siguiente" markdown>
+
+**Siguiente:** [Conclusiones](05-conclusiones.md), o
+[prueba el flujo](09-orange-colab.md) en Orange o Colab.
+
+</div>

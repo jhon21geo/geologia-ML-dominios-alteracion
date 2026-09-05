@@ -1,5 +1,9 @@
 # Conclusiones y recomendaciones
 
+!!! abstract "En una frase"
+    Los dominios de alteración se delimitan mejor cuando el geólogo firma el
+    ensamble y un **Random Forest** extiende esa firma al resto de la malla.
+
 ## Conclusiones (tesis)
 
 1. Un control geoestadístico de contactos (back-flag > 90 % entre tramos y
@@ -30,3 +34,11 @@
 Resume la tesis para lectura pública. El [PDF completo](tesis-pdf.md) sigue
 disponible. El [código](06-replicacion.md) replica el método sin publicar la
 unidad de calibración.
+
+<div class="siguiente" markdown>
+
+**Para cerrar la lectura:** [PDF completo](tesis-pdf.md) ·
+[Probar sin Python](09-orange-colab.md) ·
+[Dejar una opinión](07-contribuciones.md)
+
+</div>

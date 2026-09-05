@@ -1,5 +1,10 @@
 # Capítulo III. Metodología
 
+!!! abstract "En esta página"
+    Seis etapas: datos → EDA → no supervisado → **etiquetado del geólogo** →
+    supervisado → modelo 3D. El paso 4 no se salta; está desarrollado en
+    [asignación de dominios](03-asignacion-dominios.md).
+
 El diseño es cuantitativo, correlacional y aplicado: se busca predecir el
 **dominio geológico de alteración** a partir de espectro y química de sondaje.
 
@@ -97,3 +102,10 @@ Tramos validados en 3D: 86 538. De ellos, 80 % (69 231) calibran; el resto de
 la química (≈ 147 820) se usó como población más ciega. Una partición
 puramente aleatoria por fila inflaría métricas por correlación espacial a lo
 largo del mismo taladro.
+
+<div class="siguiente" markdown>
+
+**Siguiente (el paso decisivo):**
+[El geólogo asigna los dominios](03-asignacion-dominios.md).
+
+</div>
