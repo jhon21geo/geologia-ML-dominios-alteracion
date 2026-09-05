@@ -12,6 +12,14 @@ publicados, para que cualquiera pueda ejecutar, criticar y adaptar el método.
 
 [![Tests](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/actions/workflows/tests.yml/badge.svg)](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/actions/workflows/tests.yml)
 
+## Visor de lectura
+
+**Tesis resumida en línea:**
+[https://jhon21geo.github.io/geologia-ML-dominios-alteracion/](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/)
+
+Ahí están el resumen, los capítulos condensados y el PDF completo. No uses
+`jhonatanmallma.github.io` (esa cuenta no sirve este repositorio).
+
 ## Qué resuelve
 
 La delimitación visual de alteraciones en sondaje es lenta y sesgada. El flujo
@@ -72,8 +80,8 @@ tests/
 
 ## Documentación
 
-- Sitio: [jhon21geo.github.io/geologia-ML-dominios-alteracion](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/)
-- PDF de la tesis (referencia académica): [`docs/Tesis.pdf`](docs/Tesis.pdf)
+- **Visor de lectura (tesis resumida):** [jhon21geo.github.io/geologia-ML-dominios-alteracion](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/)
+- PDF original: [`docs/Tesis.pdf`](docs/Tesis.pdf)
 - Cómo aplicar el método a *tus* sondajes: [docs/06-replicacion.md](docs/06-replicacion.md)
 
 ## Opiniones de terceros

@@ -1,56 +1,48 @@
-# Metodología abierta de dominios de alteración
+# Delimitación de los dominios geológicos de alteración
 
-Este sitio documenta un pipeline reproducible que une **firmas espectrales
-SWIR/VNIR** y **geoquímica de sondaje** para delimitar dominios de alteración
-hidrotermal con machine learning.
+**Tesis de pregrado — visor de lectura (versión resumida)**
 
-El trabajo académico de origen es la tesis de pregrado de **Jhonatan Paul
-Mallma Espinoza** (FIGMM, Universidad Nacional de Ingeniería, 2026), asesorada
-por MSc. César Augusto Mendoza Tarazona. El repositorio **no reproduce la
-unidad minera ni las coordenadas reales**: usa un yacimiento sintético con las
-mismas asociaciones mineralógicas, el mismo desbalance de clases y los mismos
-algoritmos.
+**Autor:** Jhonatan Paul Mallma Espinoza  
+ORCID: [0009-0007-5912-5915](https://orcid.org/0009-0007-5912-5915)
 
-!!! tip "Ejecutar en cinco minutos"
-    `pip install -e .` y luego `python -m alteration_ml.cli run --profile thesis`.
-    Las figuras de esta documentación se generan con esa orden.
+**Asesor:** MSc. César Augusto Mendoza Tarazona  
+ORCID: [0009-0009-5452-3636](https://orcid.org/0009-0009-5452-3636)
 
-## Flujo en seis etapas
+**Grado:** Título profesional de Ingeniero Geólogo  
+**Facultad:** Ingeniería Geológica, Minera y Metalúrgica (FIGMM)  
+**Universidad Nacional de Ingeniería** · Lima, Perú · 2026
 
-```mermaid
-flowchart LR
-  A[1. Datos SWIR + química] --> B[2. EDA y preproceso]
-  B --> C[3. PCA y clustering]
-  C --> D[4. Etiquetado de dominios]
-  D --> E[5. Clasificadores supervisados]
-  E --> F[6. Predicción y modelo 3D]
-```
+---
 
-1. **Datos.** Scores minerales tipo Ausspec y ensayos multielementales.
-2. **Preproceso.** Completitud ≥ 80 %, imputación por sondaje, recorte p99, Z-score.
-3. **No supervisado.** PCA, dendrograma de minerales y K-Means con `k=5`.
-4. **Segmentación.** Seis dominios: Arg, ArgAvd, Fil, Oxd, Pro, Sk.
-5. **Supervisado.** Random Forest, k-NN, MLP y SVM sobre geoquímica.
-6. **Exportación.** Intervalos predichos para modelamiento implícito.
+Este visor condensa los capítulos de la tesis para lectura en línea. El relato
+de la unidad de origen se reduce a lo geológico (sistema epitermal de alta
+sulfuración con transiciones a pórfido/skarn). Los datos del repositorio son
+**sintéticos** y replican ensambles, dominios y algoritmos.
 
-## Resultado que debe verse
+**Leer:** [Resumen y abstract](00-resumen.md) ·
+[Introducción](00b-introduccion-tesis.md) ·
+[Cap. I](01-introduccion.md) ·
+[PDF completo](tesis-pdf.md)
 
-En un sistema epitermal de alta sulfuración con transiciones a pórfido/skarn
-se espera un núcleo ácido (pirofilita–alunita), un halo fílico de micas blancas,
-argílica intermedia, propilítica distal, skarn profundo y un sombrero de óxidos.
+**Código:** [Replicar el pipeline](06-replicacion.md) ·
+[Opinar o reportar una réplica](07-contribuciones.md)
 
-![Planta de dominios sintéticos](assets/06_planta_dominios.png)
+!!! warning "URL del visor"
+    El sitio publicado es
+    [jhon21geo.github.io/geologia-ML-dominios-alteracion](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/).
+    La dirección `jhonatanmallma.github.io/...` no corresponde a este
+    repositorio y muestra 404.
 
-## Cómo opinar o replicar
+## Cómo citar
 
-El repositorio está preparado para terceros:
+**IEEE**
 
-- Issues de [opinión metodológica](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues/new?template=opinion.yml)
-- Issues de [replicación](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues/new?template=replicacion.yml)
-- Guía en [Opiniones y contribuciones](07-contribuciones.md)
+Mallma Espinoza, J., “Delimitación de los dominios geológicos de alteración desde firmas espectrales y geoquímica mediante el empleo de machine learning” [Tesis de pregrado]. Lima, Perú: Universidad Nacional de Ingeniería, 2026.
 
-## Tesis original
+**APA 7**
 
-El PDF completo permanece en el repositorio como referencia
-([`Tesis.pdf`](Tesis.pdf)). La documentación web se concentra en el método
-transferible, no en el detalle de la unidad de estudio.
+Mallma, J. (2026). *Delimitación de los dominios geológicos de alteración desde firmas espectrales y geoquímica mediante el empleo de machine learning* [Tesis de pregrado, Universidad Nacional de Ingeniería]. Repositorio institucional Cybertesis UNI.
+
+## Palabras clave
+
+Machine learning · asociaciones mineralógicas · alteración hidrotermal · dominios geológicos · Random Forest · espectrometría SWIR

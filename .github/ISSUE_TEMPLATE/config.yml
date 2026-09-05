@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Documentación del pipeline
+  - name: Documentación / visor de lectura
     url: https://jhon21geo.github.io/geologia-ML-dominios-alteracion/
-    about: Guía metodológica, replicación y resultados sobre datos sintéticos.
+    about: Tesis resumida, PDF y guía de replicación.

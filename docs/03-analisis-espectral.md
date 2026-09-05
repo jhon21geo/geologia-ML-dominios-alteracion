@@ -1,47 +1,58 @@
-# 3. Espectrometría y geoquímica
+# Capítulo IV. Espectro, geoquímica y ensambles
 
-## Rasgos SWIR que importan
+## 4.1 Lectura de variables categóricas
 
-Longitudes diagnósticas (Pontual, 2013; Tabla 6–7 de la tesis):
+`aiMineral1` (mineral SWIR más abundante) y `VNIRMinerals` (óxidos) mostraron
+contraste usable en sección: pirofilita–alunita, caolinita–micas, clorita–
+carbonato, y goethita/hematita. La columna de *mezclas* (`SWIRMin_nowt`, hasta
+seis fases) no armó dominios modelables: demasiadas combinaciones, poca
+relación con el logueo. Se descartó como feature directa.
 
-| Enlace | nm | Minerales típicos |
+## 4.2 Trece minerales y su geología
+
+**Argílica avanzada (alta sulfuración):** alunita, pirofilita, dickita,
+caolinita, diásporo. Núcleo ácido, SO₂, a veces alta temperatura (diásporo).
+
+**Argílica intermedia y fílica:** mica blanca, dickita, caolinita,
+montmorillonita. Halo alrededor del núcleo; montmorillonita sugiere
+neutralización o mezcla meteórica.
+
+**Propilítica:** clorita, carbonato, epidota; periferia más neutra y fría.
+Goethita/hematita marcan oxidación somera, no el halo propilítico profundo.
+
+Correlaciones: clorita–carbonato (Pearson) y clorita–montmorillonita
+(Spearman) positivas; mica blanca vs alunita/pirofilita, asociación negativa
+moderada — coherente con núcleo ácido vs halo fílico.
+
+## 4.3 PCA y dendrograma (k = 5)
+
+El PCA de los 13 scores separa ensambles. Interpretación de clústeres de
+minerales (sección 4.2):
+
+| Clúster | Minerales | Lectura |
 | --- | --- | --- |
-| Al–OH | 2160–2220 | alunita, pirofilita, caolinita, ilita |
-| Fe–OH | 2230–2295 | clorita férrica |
-| Mg–OH / CO₃ | 2300–2360 | clorita, carbonato, epidota |
-| OH / H₂O | ~1400, ~1900 | micas, caolinita, sílice hidratada |
+| C1 | Pirofilita | Ácido, a veces solo |
+| C2 | Alunita, zunyita, diásporo | Argílica avanzada |
+| C3 | Epidota, montmorillonita, clorita, carbonato | Propilítica |
+| C4 | Caolinita, dickita | Argílica intermedia |
+| C5 | Yeso, mica blanca, sílice hidratada | Fílica / baja T |
 
-El pipeline **no reinterpreta espectros ASD**: trabaja con scores 0–100, como
-la matriz Ausspec. `synthetic_swir_curve()` solo dibuja un valle gaussiano
-didáctico a partir de esos scores.
+K-Means (k = 5) se corre **sobre muestras**. No coincide 1:1 con los seis
+`MOD_ALT`: skarn y propilítica comparten clorita; los óxidos viven sobre todo
+en VNIR. El etiquetado final mezcla clúster + ensamble + validación 3D.
 
-## Trece minerales retenidos
+![PCA de abundancias SWIR en el sintético del repositorio](assets/03_pca_dominios.png)
 
-Tras eliminar fases de media cero (ruido o trazas), la tesis conserva:
+![Dendrograma de minerales SWIR (datos sintéticos)](assets/05_dendrograma.png)
 
-WhiteMica, Chlorite, Carbonate, Epidote, Kaolinite, Dickite, Montmor,
-Alunite, Gypsum, Pyrophyllite, Diaspore, Zunyite, Water_silica.
+Las figuras de esta página salen del depósito **sintético** del código, no de
+la unidad original. Reproducen la lógica de ensambles.
 
-En el sintético, esas medias se muestrean con ruido para que ArgAvd no sea
-un punto perfecto de pirofilita, ni Fil una mica pura.
+## 4.4 Geoquímica que arrastra la zonación
 
-![Abundancias por dominio](assets/02_minerales.png)
+Firmas típicas usadas para el clasificador supervisado:
 
-## Lectura geológica de los ensambles
-
-- **Argílica avanzada.** Fluidos ácidos; pirofilita + alunita ± diásporo/zunyita.
-- **Fílica.** Halo de mica blanca; transiciones a caolinita/dickita.
-- **Argílica.** Caolinita + mica; menor temperatura o mayor mezcla meteórica.
-- **Propilítica.** Clorita–carbonato–epidota en la periferia más neutra.
-- **Skarn.** Mismo family de filosilicatos con geoquímica cálcica-férrea.
-- **Óxidos.** VNIR (hematita/goethita) cerca de superficie; S bajo.
-
-## Geoquímica
-
-34 columnas tras el filtro de completitud. Firmas esperadas (y programadas
-en el generador):
-
-| Dominio | Firma química típica |
+| Dominio | Firma química |
 | --- | --- |
 | ArgAvd | Au–As–S altos, Ca–Na bajos |
 | Fil | K–Rb–Ba, S moderado |
@@ -50,7 +61,4 @@ en el generador):
 | Sk | Ca–Fe–Mn–Cu–W |
 | Oxd | Fe–As altos, S muy bajo |
 
-![Conteo de dominios](assets/01_dominios.png)
-
-El desbalance (pocos intervalos Arg y Pro) es intencional: replica el sesgo
-de la Tabla 17 y explica parte del sobreajuste discutido en la tesis.
+![Abundancias espectrales por dominio (sintético)](assets/02_minerales.png)

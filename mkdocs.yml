@@ -1,9 +1,11 @@
-site_name: Dominios de alteración con ML
-site_description: Metodología abierta para delimitar dominios hidrotermales con SWIR, geoquímica y machine learning.
+site_name: Tesis — Dominios de alteración con ML
+site_description: Visor de lectura de la tesis resumida de Jhonatan Paul Mallma Espinoza (UNI, 2026).
 site_author: Jhonatan Paul Mallma Espinoza
+site_url: https://jhon21geo.github.io/geologia-ML-dominios-alteracion/
 repo_url: https://github.com/jhon21geo/geologia-ML-dominios-alteracion
 repo_name: jhon21geo/geologia-ML-dominios-alteracion
 edit_uri: edit/main/docs/
+copyright: Mallma Espinoza, J. P. (2026). Universidad Nacional de Ingeniería.
 theme:
   name: material
   language: es
@@ -23,26 +25,37 @@ theme:
         icon: material/weather-sunny
         name: Modo claro
   features:
-    - navigation.expand
+    - navigation.footer
+    - navigation.instant
     - navigation.sections
     - navigation.top
+    - navigation.tracking
     - search.suggest
     - search.highlight
     - content.code.copy
     - toc.follow
 
 nav:
-  - Inicio: index.md
-  - 1. Planteamiento: 01-introduccion.md
-  - 2. Metodología: 02-metodologia.md
-  - 3. Espectro y geoquímica: 03-analisis-espectral.md
-  - 4. Machine learning: 04-modelamiento-ml.md
-  - 5. Conclusiones: 05-conclusiones.md
-  - Replicar el pipeline: 06-replicacion.md
-  - Opiniones y contribuciones: 07-contribuciones.md
+  - Portada: index.md
+  - Visor de lectura:
+    - Resumen y abstract: 00-resumen.md
+    - Introducción: 00b-introduccion-tesis.md
+    - 1. Planteamiento: 01-introduccion.md
+    - 2. Marco teórico: 02-marco-teorico.md
+    - 3. Metodología: 02-metodologia.md
+    - 4. Espectro y geoquímica: 03-analisis-espectral.md
+    - 5. Resultados de ML: 04-modelamiento-ml.md
+    - 6. Conclusiones: 05-conclusiones.md
+    - Referencias seleccionadas: 08-referencias.md
+    - PDF completo: tesis-pdf.md
+  - Código abierto:
+    - Replicar el pipeline: 06-replicacion.md
+    - Opiniones y contribuciones: 07-contribuciones.md
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
@@ -52,3 +65,9 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      toc_depth: 3
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jhon21geo/geologia-ML-dominios-alteracion

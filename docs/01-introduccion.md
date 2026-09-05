@@ -1,38 +1,70 @@
-# 1. Planteamiento
+# Capítulo I. Planteamiento
 
-## Problema
+## 1.1 Generalidades
 
-Las operaciones acumulan espectros TerraSpec, logs geológicos y ensayos
-químicos, pero la integración suele ser visual y poco repetible. Eso produce
-contactos de alteración inconsistentes entre sondajes y aumenta la varianza
-intra-dominio en la estimación de recursos.
+El machine learning se ha masificado en la última década por algoritmos
+accesibles en Python. En estimación de recursos el referente clásico sigue
+siendo el kriging; en geología, entornos como **Orange** (Universidad de
+Ljubljana) permiten ensamblar flujos visuales sobre NumPy, SciPy y
+scikit-learn. La densidad de datos de logueo exige reconocer patrones
+multivariados y producir un modelo más estable, no solo más “pintado”.
 
-Pregunta de trabajo: **¿cómo delimitar dominios mineralógicos de alteración de
-forma sistemática, vinculando la anomalía espectral con la geoquímica, para
-reducir sesgo en el modelo geológico?**
+Predecir características de sondaje a partir de geoquímica y espectro reduce
+tiempo de interpretación y sube la consistencia entre taladros.
 
-## Objetivos que hereda el código
+## 1.2 Problema
 
-- Vincular scores SWIR/VNIR con intervalos de sondaje y ensayos químicos.
-- Definir ensambles (clusters) coherentes con la mineralogía de alteración.
-- Comparar algoritmos y elegir el de mejor desempeño predictivo.
+Faltan procesos que uniformicen criterios de descripción geológica y
+herramientas que identifiquen patrones en conjuntos multivariados. Hill et al.
+(2014) y la revisión de Dramsch (2020) muestran que el ML está más difundido
+en geofísica que en geoquímica, geoestadística y geología de minas. En el
+Perú, la aplicación sistemática aún no está consolidada, pese a protocolos de
+control de calidad y a volúmenes TerraSpec ya existentes.
 
-## Alcance de este repositorio
+Las asociaciones mineralógicas definen dominios, y esos dominios se
+relacionan con clusters económicos. De ahí la pregunta general:
 
-| Incluye | No incluye |
+> ¿Cómo la imprecisión en la delimitación de los dominios mineralógicos de las
+> alteraciones impacta en el modelo de estimación del recurso mineral?
+
+Preguntas específicas:
+
+- ¿Hay vinculación sistemática de la anomalía espectral al modelo de recursos?
+- ¿Están débiles los clusters económicos que relacionan mineralogía y estimación?
+- ¿Qué algoritmo delimita mejor esos dominios?
+
+## 1.3 Objetivos
+
+**General.** Mejorar la precisión en la delimitación de los dominios
+mineralógicos de alteración que alimentan el modelo de estimación.
+
+**Específicos.**
+
+1. Desarrollar una metodología que vincule la anomalía espectral al modelo de
+   recursos.
+2. Definir clusters (ensambles) entre mineralogía hidrotermal y el modelo de
+   estimación.
+3. Elegir el algoritmo de mejor rendimiento para delimitar dominios.
+
+## 1.4 Antecedentes (síntesis)
+
+| Trabajo | Aporte usado aquí |
 | --- | --- |
-| Flujo PCA → clustering → clasificación | Nombre, mapas ni leyes de la unidad original |
-| Seis dominios y 13 minerales SWIR de la tesis | Espectros ASD crudos de operación |
-| Hiperparámetros publicados | Leapfrog ni licencias comerciales |
-| Datos sintéticos con ruido y desbalance | Datos confidenciales de perforación |
+| Cate et al. (2018a, 2018b) | ML como herramienta de geólogo; litogeoquímica → litología y alteración (Lalor, Canadá) |
+| Chen et al. (2017) | One-class SVM para anomalías geoquímicas multivariadas |
+| Sun et al. (2019) | RF vs SVM vs ANN en prospectividad; **RF** con mejor precisión |
+| Carranza & Laborte (2015) | RF y k-NN en mapeo de prospectividad |
+| Carrillo et al. (2019) | Ciencia de datos + geometalurgia en sondajes (UNI) |
+| Cracknell & Reading (2014) | Comparación de cinco algoritmos en mapeo geológico |
 
-El análogo geológico es un sistema **epitermal de alta sulfuración** con
-transiciones a **pórfido/skarn**: núcleo ácido, halo fílico, propilítica distal,
-skarn cálcico en profundidad y oxidación supérgena.
+Tao Sun et al. (2019) es el referente más directo para comparar SVM, redes y
+Random Forest en un problema de clasificación espacial minera.
 
-## Hipótesis operativa
+## 1.5 Hipótesis
 
-Si los ensambles espectrales se etiquetan con rigor y se mapean sobre
-geoquímica estandarizada, un clasificador no lineal (en la tesis, Random Forest)
-recupera la zonación mejor que la interpretación visual aislada, y mejor que un
-SVM linealmente rígido en un espacio geoquímico mezclado.
+**General.** La delimitación correcta de dominios geológicos impacta de forma
+favorable el modelo de estimación.
+
+**Específicas.** Vincular la anomalía espectral al modelo mejora el recurso;
+fortalecer clusters económico-mineralógicos reduce incertidumbre; un algoritmo
+adecuado (en este estudio, Random Forest) mejora la delimitación.

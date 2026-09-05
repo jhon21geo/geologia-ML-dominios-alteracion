@@ -1,89 +1,86 @@
-# 2. Metodología
+# Capítulo III. Metodología
 
-El pipeline está implementado en `src/alteration_ml` y se dispara con
-`python -m alteration_ml.cli run`.
+El diseño es cuantitativo, correlacional y aplicado: se busca predecir el
+**dominio geológico de alteración** a partir de espectro y química de sondaje.
 
-## Datos de entrada
+## 3.1 Flujo en seis etapas
 
-Cada intervalo de sondaje tiene:
-
-- Identificadores y geometría: `sample_id`, `holeid`, `from_m`, `to_m`, `x`, `y`, `z`
-- 13 scores SWIR (0–100): mica blanca, clorita, carbonato, epidota, caolinita,
-  dickita, montmorillonita, alunita, yeso, pirofilita, diásporo, zunyita, sílice hidratada
-- VNIR: hematita, goethita y `VNIRMinerals`
-- 34 elementos químicos (ppm o %)
-- Etiqueta `MOD_ALT` en tramos de entrenamiento; el resto queda para predicción ciega
-
-En la tesis esas tablas salían de Ausspec + laboratorio. Aquí las genera
-`alteration_ml.synthetic` con semilla fija.
-
-## Preproceso (sección 3.10 de la tesis)
-
-1. **Completitud.** Se descartan columnas con menos del 80 % de datos.
-2. **Imputación.** Mediana por sondaje y, si aún falta, mediana global.
-3. **Outliers.** Recorte al percentil 99 (no se borran filas: se preserva la traza).
-4. **Escala.** Z-score, porque conviven `%` y `ppm`.
-
-```python
-from alteration_ml.preprocess import prepare_feature_matrix
-ready, z_cols, scaler = prepare_feature_matrix(df, feature_kind="chemistry")
+```mermaid
+flowchart LR
+  A[1. Datos] --> B[2. EDA]
+  B --> C[3. No supervisado]
+  C --> D[4. Etiquetado]
+  D --> E[5. Supervisado]
+  E --> F[6. Modelo 3D]
 ```
 
-## No supervisado (sección 3.11)
+1. **Recolección.** Espectros TerraSpec y ensayos multielementales, validados
+   y unidos por muestra / from–to.
+2. **EDA.** Variables categóricas (`aiMineral1`, `VNIRMinerals`) y numéricas
+   (13 scores SWIR).
+3. **No supervisado.** PCA, dendrograma y K-Means (k = 5) **sobre espectro**.
+4. **Segmentación.** El geólogo valida clústeres y define `MOD_ALT` (seis
+   dominios). En la tesis eso se apoyó en Leapfrog.
+5. **Supervisado.** 80 % / 20 % estratificado sobre tramos etiquetados;
+   comparación RF, k-NN, MLP y SVM **sobre geoquímica**.
+6. **Predicción 3D.** El mejor modelo etiqueta el resto de intervalos.
 
-Se aplica **solo a las abundancias espectrales**:
+En la tesis el modelado se hizo en Orange. Este repositorio reproduce las
+mismas etapas en scikit-learn.
 
-| Técnica | Rol |
-| --- | --- |
-| PCA | Reduce ruido y muestra separación de ensambles en PC1–PC2 |
-| Clustering jerárquico (Ward) | Agrupa los *13 minerales* por perfil de ocurrencia |
-| K-Means (`k=5`) | Agrupa *muestras*; `k` se toma del dendrograma |
+## 3.2 Datos espectrales
 
-El valor `k=5` no es un dominio geológico todavía: es una partición estadística
-que se interpreta con el ensamble mineral y se traduce a los seis `MOD_ALT`.
+Ausspec entrega ~69 columnas. Tras tirar minerales de media cero quedan
+**13 scores SWIR** (Tabla 15):
 
-## Asignación de dominios (sección 3.12.2)
+WhiteMica, Chlorite, Carbonate, Epidote, Kaolinite, Dickite, Montmor,
+Alunite, Gypsum, Pyrophyllite, Diaspore, Zunyite, Water_silica.
 
-| Dominio | Criterio mineralógico |
-| --- | --- |
-| ArgAvd | Pirofilita + alunita (se fusionan dos variantes ácidas) |
-| Fil | Mica blanca dominante |
-| Arg | Caolinita + mica blanca |
-| Pro | Montmorillonita + clorita ± carbonato/epidota |
-| Sk | Clorita + montmorillonita + mica + caolinita |
-| Oxd | Hematita/goethita (VNIR) ± yeso/sílice hidratada |
+VNIR aporta hematita/goethita para el dominio de óxidos. Pares con Pearson y
+Spearman > 0,65 se leyeron como ensamble.
 
-Las frecuencias del sintético **no copian el conteo exacto** de la Tabla 17
-(eso forzaba a romper la zonación). Priorizan un análogo espacial: núcleo
-ácido, halo fílico/argílico, propilítica distal, skarn a mayor profundidad y
-óxidos someros. Arg sigue siendo la clase más chica.
+## 3.3 Datos químicos
 
-## Supervisado (sección 3.12)
+Protocolo (sección 3.10):
 
-Variable objetivo: `MOD_ALT`. Variables predictoras: geoquímica Z-score
-(no las coordenadas: evitar fugas espaciales). Partición 80/20 estratificada
-sobre tramos etiquetados.
+1. Completitud ≥ **80 %** (se eliminaron variables raras: AuCN, CuCN, Hg, etc.).
+2. Imputación: **mediana por sondaje**, luego mediana global.
+3. Outliers: recorte al **percentil 99** (no se borran filas).
+4. **Z-score**, porque conviven `%` y `ppm`.
 
-Hiperparámetros del perfil `thesis` (Tablas 19–22):
+La variable objetivo es `MOD_ALT`. Las coordenadas **no** entran al
+clasificador (evitar fuga espacial).
 
-| Modelo | Ajustes publicados |
+## 3.4 Seis dominios (sección 3.12.2)
+
+| Código | Dominio | Criterio mineralógico |
+| --- | --- | --- |
+| ArgAvd | Argílica avanzada | Pirofilita + alunita (± diásporo, zunyita). Se fusionan dos variantes ácidas |
+| Fil | Fílica | Mica blanca dominante |
+| Arg | Argílica | Caolinita + mica blanca |
+| Pro | Propilítica | Montmorillonita + clorita ± carbonato/epidota |
+| Sk | Skarn | Clorita + montmorillonita + mica + caolinita |
+| Oxd | Óxidos | Hematita/goethita VNIR ± yeso/sílice hidratada |
+
+En la tesis, 86 538 intervalos etiquetados (Tabla 17): Fil 28 669, Sk 25 266,
+ArgAvd 23 308, Pro 5 050, Oxd 3 297, Arg 978. Fil, Sk y ArgAvd dominan; Arg y
+Pro son clases raras (sesgo de recall).
+
+## 3.5 Hiperparámetros publicados (Tablas 19–22)
+
+| Modelo | Ajuste |
 | --- | --- |
 | Random Forest | 10 árboles, `max_features=8`, profundidad 4, `min_samples_split=5`, clases balanceadas |
-| k-NN | k=5, Euclidean, pesos por distancia |
-| MLP | 100 neuronas, ReLU, Adam, α=10⁻⁴ |
-| SVM | C=1, kernel RBF |
+| k-NN | k = 5, Euclidean, pesos por distancia |
+| MLP | 100 neuronas, ReLU, Adam, α = 10⁻⁴, 200 iteraciones |
+| SVM | C = 1, kernel RBF, tope de **100 iteraciones** en Orange |
 
-El SVM de Orange usaba un tope de **100 iteraciones**. El perfil `thesis` lo
-reproduce (suele no converger y quedar por debajo de RF). El perfil `robust`
-sube árboles, capacidad de la red e iteraciones del SVM.
+El tope de 100 iteraciones del SVM explica, en parte, su mal desempeño. El
+perfil `robust` del código relaja árboles, red e iteraciones.
 
-## Evaluación
+## 3.6 División train / test
 
-Exactitud, precisión y recall macro, F1, AUC one-vs-rest, matriz de confusión y
-curvas ROC por dominio. El modelo ganador etiqueta el resto de intervalos.
-
-## Modelamiento 3D
-
-La tesis exportaba predicciones a Leapfrog. Este repo se detiene en CSV
-(`outputs/predicciones.csv`) y en secciones X–Y / Y–Z. Cualquier modelador
-implícito puede consumir `holeid`, `from_m`, `to_m`, `best_pred`.
+Tramos validados en 3D: 86 538. De ellos, 80 % (69 231) calibran; el resto de
+la química (≈ 147 820) se usó como población más ciega. Una partición
+puramente aleatoria por fila inflaría métricas por correlación espacial a lo
+largo del mismo taladro.

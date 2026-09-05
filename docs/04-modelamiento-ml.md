@@ -1,77 +1,82 @@
-# 4. Machine learning y resultados en el sintético
+# Capítulo V. Resultados de machine learning
 
-Los números de esta página salen de `python -m alteration_ml.cli run --profile thesis`
-sobre el CSV de semilla 42 (~2 900 intervalos). No son las métricas de un
-yacimiento real: el sintético mete ruido, sesgo por sondaje y 28 % de mezcla
-con dominios vecinos para que el problema no sea trivial.
+Hay **dos capas** de cifras. Las de la tesis (Orange, dato real) y las del
+repositorio (scikit-learn, dato sintético). No se deben mezclar.
 
-Ranking típico con el perfil publicado (RF poco profundo, SVM a 100 iteraciones):
+## 5.1 Desempeño en la tesis (dato de calibración)
 
-| Modelo | AUC | accuracy | F1 macro |
+Entrenamiento sobre 69 231 muestras etiquetadas (Tabla 25, promedios):
+
+| Modelo | AUC | Precisión | Recall |
 | --- | --- | --- | --- |
-| random_forest | 0.86 | 0.62 | 0.60 |
-| neural_network | 0.81 | 0.55 | 0.51 |
-| knn | 0.77 | 0.52 | 0.49 |
-| svm | 0.80 | 0.20 | 0.17 |
+| SVM | 0,585 | 0,340 | 0,285 |
+| Random Forest | 0,990 | 0,993 | 0,993 |
+| Red neuronal | 0,998 | 0,969 | 0,969 |
+| k-NN | 0,999 | 0,981 | 0,981 |
 
-Random Forest gana, y SVM queda último — el mismo orden cualitativo de la tesis,
-aunque los valores absolutos cambian porque el dato no es el de operación.
+RF, MLP y k-NN superan 96 % de coincidencia en esa partición. SVM queda
+muy por debajo: datos no linealmente separables y/o hiperparámetros (C,
+gamma, 100 iteraciones) insuficientes (Cortes & Vapnik, 1995).
 
-## Espacio PCA
+AUC one-vs-rest por dominio (Figura 43, valores aproximados de la tesis):
 
-Los dos primeros componentes suelen concentrar la mayor parte de la varianza
-de los 13 scores. El núcleo ácido (pirofilita–alunita) se separa del halo de
-mica y del extremo clorita–carbonato.
+| Dominio | RF | MLP | k-NN | SVM |
+| --- | --- | --- | --- | --- |
+| Arg | 0,98–0,99 | 0,97 | 0,90 | 0,75 |
+| ArgAvd | 0,97 | 0,96 | 0,88 | 0,70 |
+| Fil | 0,99 | 0,98 | 0,90 | 0,68 |
+| Oxd | 0,97 | 0,96 | 0,89 | 0,73 |
+| Pro | 0,99 | 0,99 | 0,90 | 0,75 |
+| Sk | 0,98 | 0,96 | 0,88 | 0,72 |
 
-![PCA coloreado por dominio](assets/03_pca_dominios.png)
+En validación más estricta (Tabla 26) RF se mantiene cerca de 1 en AUC y F1
+por dominio; SVM cae en Fil y Sk (AUC 0,47 y 0,53 en algunos bloques). Eso
+coincide con Rodríguez-Galiano et al. (2015) y con las limitaciones de SVM en
+geoquímica compleja (Pour & Hashim, 2014).
 
-## Dendrograma y K-Means
+## 5.2 Sobreajuste (curvas de aprendizaje)
 
-El clustering jerárquico se calcula **entre minerales**. Agrupaciones esperadas:
+| Modelo | Train | Validación ciega | Lectura |
+| --- | --- | --- | --- |
+| Random Forest | ~1,0 | ~0,73–0,78 | Sobreajuste moderado; mejor equilibrio |
+| SVM | ~0,91–0,95 | ~0,70–0,73 | Menos techo, más estable |
+| MLP | ~0,99 | ~0,55–0,67 | Sobreajuste fuerte |
+| k-NN | ~0,99 | ~0,60–0,67 | Sobreajuste fuerte |
 
-- Pirofilita (a veces sola)
-- Alunita + diásporo + zunyita
-- Caolinita + dickita
-- Clorita + carbonato + epidota + montmorillonita
-- Mica blanca + yeso + sílice hidratada
+RF sigue siendo el elegido: mejor precisión de validación pese al gap
+train/test. Parte de la fluctuación viene de Arg y Pro (pocos tramos).
 
-K-Means (`k=5`) se calcula **entre muestras**. No tiene por qué coincidir 1:1
-con los seis `MOD_ALT` (el skarn y la propilítica comparten clorita; los óxidos
-se apoyan en VNIR).
+## 5.3 Modelo 3D y vectores
 
-![PCA coloreado por K-Means](assets/04_pca_kmeans.png)
-![Dendrograma](assets/05_dendrograma.png)
+Las predicciones RF se cargaron a Leapfrog. En sección, los contactos RF son
+más continuos que el sólido armado solo con logueo visual. La zonación
+resultante es un sistema HS con transiciones a pórfido/skarn (Sillitoe, 2010):
 
-## Clasificación supervisada
+- Núcleo argílico avanzado (alunita–pirofilita) en centro-sur/este del modelo.
+- Halo fílico (mica blanca).
+- Propilítica distal (clorita–carbonato).
+- Óxidos y sílice hidratada en superficie.
+- Skarn / potásica en profundidad (esta última, ciega a SWIR).
 
-Los cuatro modelos ven **solo geoquímica**. Eso obliga a que la química
-arrastre la zonación espectral, que es el punto del método: predecir alteración
-donde no hay TerraSpec.
+Los dominios se alinean con estructuras NE–SW y NW–SE. Alunita y yeso marcan
+conductos de fluidos ácidos. Eso alimenta geometalurgia (argílico vs fílico),
+blancos de perforación y dominios de estimación.
 
-![Comparación de métricas](assets/08_metricas_modelos.png)
+## 5.4 Réplica en el sintético de este repo
+
+`python -m alteration_ml.cli run --profile thesis` (semilla 42) reproduce el
+**orden** RF > MLP > k-NN > SVM, no los números absolutos (el sintético es
+otro universo, con ruido y transiciones programadas).
+
+![Comparación de modelos en el sintético](assets/08_metricas_modelos.png)
 ![ROC one-vs-rest](assets/09_roc_ovr.png)
-![Matriz del mejor modelo](assets/10_confusion_mejor.png)
-
-En la tesis, Random Forest alcanzó AUC/precisión cercanas a 1 en validación
-interna y ~0.73–0.78 en un conjunto más ciego, con SVM muy por debajo. El
-sintético es más separable, así que las cifras absolutas cambian; el ranking
-sigue siendo el resultado a discutir.
-
-## Continuidad espacial
-
-La planta y la sección no se usan como features. Sirven para verificar que
-la predicción no rompe la zonación (núcleo, halo, distal, profundo, somero).
-
-![Planta real](assets/06_planta_dominios.png)
-![Sección real](assets/07_seccion_dominios.png)
+![Matriz de confusión del mejor modelo](assets/10_confusion_mejor.png)
 ![Planta predicha](assets/11_planta_prediccion.png)
-![Sección predicha](assets/12_seccion_prediccion.png)
 
-## Limitaciones que el código no esconde
+## 5.5 Limitaciones (sección 4.8)
 
-- Scores minerales ya interpretados (Ausspec); el error de mezcla espectral
-  se hereda.
-- SWIR no ve cuarzo, sulfuros ni feldespato: la potásica queda ciega.
-- Clases raras (Arg, Pro) degradan el recall.
-- Coordenadas excluidas a propósito; un modelo espacial explícito sería otro
-  experimento (y otra fuga potencial).
+- Desbalance de clases: pirofilita/alunita bien muestreadas; Arg y Pro no.
+- TerraSpec no detecta cuarzo, sulfuros ni feldespato → potásica y sulfuros
+  quedan fuera.
+- Mezclas de hasta seis minerales enmascaran fases menores (Al–OH / Fe–OH).
+- El supervisado hereda errores del etiquetado en Leapfrog.

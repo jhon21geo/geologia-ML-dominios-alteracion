@@ -1,28 +1,32 @@
-# 5. Conclusiones y recomendaciones
+# Conclusiones y recomendaciones
 
-## Conclusiones transferibles
+## Conclusiones (tesis)
 
-1. Un protocolo de completitud, imputación por sondaje, recorte p99 y Z-score
-   deja la geoquímica en un espacio comparable para distancias y árboles.
-2. PCA + dendrograma + K-Means convierten 13 scores SWIR en ensambles
-   discutibles con el geólogo; no sustituyen el etiquetado, lo ordenan.
-3. Seis dominios (argílica, argílica avanzada, fílica, óxidos, propilítica,
-   skarn) cubren un análogo AS–pórfido–skarn sin anclarse a una unidad.
-4. Random Forest, en la tesis, fue el mejor compromiso entre discriminación y
-   robustez; SVM fue el más frágil. El repo permite repetir esa comparación.
-5. El producto útil para estimación es un intervalo `from–to` con `MOD_ALT`
-   predicho, no un mapa pintado a mano.
+1. Un control geoestadístico de contactos (back-flag > 90 % entre tramos y
+   sólidos Leapfrog) subió la exactitud predictiva a un rango **90–95 %** y
+   estabilizó el modelo de bloques.
+2. Integrar SWIR–VNIR (TerraSpec) con química, y compactar con PCA más del
+   **80 %** de la varianza espectral, permite atar anomalías espectrales a la
+   geometría 3D sin depender solo del ojo del logueo.
+3. La correlación entre mineralogía espectral y elementos guía (Au, Cu, As, S)
+   delimita dominios y **baja la varianza intra-dominio**, que es lo que
+   necesita la estimación.
+4. Entre SVM, k-NN, MLP y RF, **Random Forest** fue el más estable frente al
+   ruido de perforación: accuracy > 90 % en la calibración publicada, con
+   sobreajuste de validación controlado (~0,77). Es la herramienta elegida
+   para clasificar dominios de alteración de forma automática.
 
-## Recomendaciones para quien replique
+## Recomendaciones
 
-- Empieza con el perfil `robust` si tus clases se solapan más que el sintético.
-- Reporta F1 macro y recall de las clases raras, no solo accuracy.
-- Separa sondajes (no filas aleatorias) si quieres una validación espacial.
-- Documenta qué minerales SWIR *no* tienes: el método se degrada sin alunita
-  o sin mica blanca, según el sistema.
-- Abre un issue de replicación con métricas anonimizadas.
+1. Ampliar y diversificar bases espectrales y geológicas.
+2. Probar modelos híbridos (redes + árboles).
+3. Validar el mismo flujo en otros tipos de yacimiento —este repositorio
+   existe para eso, con dato sintético y plantilla de replicación.
+4. Capacitar a geólogos en análisis de datos, no solo en el software 3D.
+5. Mantener colaboración academia–industria con datos anonimizados.
 
-## Qué queda fuera a propósito
+## Qué hace este visor
 
-Detalle geomorfológico, logística de la unidad y tablas reales de laboratorio.
-Quien necesite el relato académico completo puede leer [`Tesis.pdf`](Tesis.pdf).
+Resume la tesis para lectura pública. El [PDF completo](tesis-pdf.md) sigue
+disponible. El [código](06-replicacion.md) replica el método sin publicar la
+unidad de calibración.
