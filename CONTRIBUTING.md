@@ -3,6 +3,9 @@
 Este repositorio está pensado para que terceros **lean la metodología, la ejecuten
 con datos sintéticos y la repliquen en sus propios proyectos**.
 
+Si no programas en Python: usa **Orange** o **Google Colab**
+([guía](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/)).
+
 ## Cómo participar
 
 1. Abre un [issue](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues) con la plantilla adecuada:

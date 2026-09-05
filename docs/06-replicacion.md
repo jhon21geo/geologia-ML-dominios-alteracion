@@ -1,5 +1,9 @@
 # Replicar el pipeline
 
+¿No usas Python a diario? Empieza por
+**[Orange o Google Colab](09-orange-colab.md)**. Esta página es el camino con
+código local.
+
 ## En este repositorio
 
 ```bash
@@ -11,6 +15,7 @@ pytest
 
 Notebooks:
 
+0. `notebooks/00_colab_pipeline.ipynb` (Google Colab, un clic)
 1. `notebooks/01_eda_espectral_geoquimica.ipynb`
 2. `notebooks/02_unsupervised_ensambles.ipynb`
 3. `notebooks/03_supervised_clasificacion.ipynb`

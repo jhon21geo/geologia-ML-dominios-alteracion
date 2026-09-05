@@ -23,7 +23,8 @@ sulfuración con transiciones a pórfido/skarn). Los datos del repositorio son
 [Asignación de dominios](03-asignacion-dominios.md) ·
 [PDF completo](tesis-pdf.md)
 
-**Código:** [Replicar el pipeline](06-replicacion.md) ·
+**Código:** [Orange o Colab (sin Python)](09-orange-colab.md) ·
+[Replicar el pipeline](06-replicacion.md) ·
 [Opinar o reportar una réplica](07-contribuciones.md)
 
 !!! warning "URL del visor"

@@ -34,7 +34,18 @@ propone:
 En la tesis, **Random Forest** fue el clasificador más estable. En los datos
 sintéticos el ranking se recalcula cada vez que corres el pipeline.
 
-## Inicio rápido
+## Inicio rápido (elige un camino)
+
+**Sin instalar Python**
+
+- Lienzo de widgets, como la tesis:
+  **[Orange 3](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/#orange-como-en-la-tesis)**
+- Un clic en el navegador:
+  [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jhon21geo/geologia-ML-dominios-alteracion/blob/cursor/metodologia-tesis-sintetica-fd6d/notebooks/00_colab_pipeline.ipynb)
+
+Guía: [Orange y Google Colab](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/)
+
+**Con Python en tu máquina**
 
 ```bash
 git clone https://github.com/jhon21geo/geologia-ML-dominios-alteracion.git
@@ -72,7 +83,8 @@ dominan; Arg y Pro son minoritarios).
 ```
 src/alteration_ml/   paquete Python
 data/synthetic/      CSV generados (semilla 42)
-notebooks/           EDA, no supervisado, supervisado
+notebooks/           Colab + EDA, no supervisado, supervisado
+orange/              Recetario del lienzo Orange
 docs/                sitio MkDocs
 configs/pipeline.yaml
 tests/
@@ -83,6 +95,7 @@ tests/
 - **Visor de lectura (tesis resumida):** [jhon21geo.github.io/geologia-ML-dominios-alteracion](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/)
 - PDF original: [`docs/Tesis.pdf`](docs/Tesis.pdf)
 - Cómo aplicar el método a *tus* sondajes: [docs/06-replicacion.md](docs/06-replicacion.md)
+- **Sin programar:** [Orange y Google Colab](docs/09-orange-colab.md)
 
 ## Opiniones de terceros
 

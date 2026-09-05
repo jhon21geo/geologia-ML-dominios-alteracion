@@ -50,6 +50,7 @@ nav:
     - PDF completo: tesis-pdf.md
   - Código abierto:
     - Replicar el pipeline: 06-replicacion.md
+    - Orange y Google Colab: 09-orange-colab.md
     - Opiniones y contribuciones: 07-contribuciones.md
 
 markdown_extensions:

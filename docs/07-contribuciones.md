@@ -12,6 +12,11 @@ puedan discutirlo y llevarlo a sus proyectos** sin pedir acceso a una unidad.
 | Reportar un error de código | [Issue de error](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues/new?template=bug.yml) |
 | Enviar código | Pull request (ver [CONTRIBUTING.md](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/blob/main/CONTRIBUTING.md)) |
 
+## Cómo probar el método si no programas
+
+Orange (lienzo) o Google Colab:
+https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/
+
 ## Qué es útil en una opinión
 
 - ¿El dendrograma de *minerales* aporta algo que no dé K-Means sobre muestras?
