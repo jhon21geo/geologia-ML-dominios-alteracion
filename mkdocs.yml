@@ -1,0 +1,22 @@
+site_name: Delimitación de Dominios Geológicos de Alteración - Tesis UNI
+site_author: Jhonatan Paul Mallma Espinoza
+theme:
+  name: material
+  language: es
+  palette:
+    primary: indigo
+    accent: blue
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Resumen Ejecutivo: index.md
+  - 1. Introducción: 01-introduccion.md
+  - 2. Metodología: 02-metodologia.md
+  - 3. Análisis Espectral & Geoquímico: 03-analisis-espectral.md
+  - 4. Machine Learning & Resultados: 04-modelamiento-ml.md
+  - 5. Conclusiones & Recomendaciones: 05-conclusiones.md
