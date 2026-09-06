@@ -53,9 +53,9 @@ El cuaderno clona este repositorio, instala dependencias y corre
 `alteration_ml` en la nube. No edita tus archivos locales.
 
 !!! tip "Si el botón pide una rama"
-    En GitHub: archivo `notebooks/00_colab_pipeline.ipynb` → icono de Colab
-    (o “Open in Colab”). Elige la rama del pull request si `main` aún no
-    tiene el cuaderno.
+    El cuaderno aún no está en `main`. Ábrelo desde el repositorio:
+    [`notebooks/00_colab_pipeline.ipynb`](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/blob/cursor/metodologia-tesis-sintetica-fd6d/notebooks/00_colab_pipeline.ipynb)
+    → icono de Colab. Tras fusionar el PR, el mismo archivo en `main` bastará.
 
 ## Orange (como en la tesis)
 
@@ -67,8 +67,8 @@ lienzo** con el CSV sintético.
 
 1. Instala Orange 3: <https://orangedatamining.com/download/>
 2. Descarga
-   [`synthetic_merged.csv`](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/blob/cursor/metodologia-tesis-sintetica-fd6d/data/synthetic/synthetic_merged.csv)
-   (botón Raw → Guardar).
+   [`synthetic_merged.csv`](https://raw.githubusercontent.com/jhon21geo/geologia-ML-dominios-alteracion/main/data/synthetic/synthetic_merged.csv)
+   (Guardar como CSV).
 
 ### 2. No supervisado (espectro → clústeres)
 

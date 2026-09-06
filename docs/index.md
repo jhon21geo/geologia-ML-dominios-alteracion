@@ -44,27 +44,20 @@ detalle de la unidad de calibración).
 
 El visor no hay que leerlo de cabo a rabo. Elige un camino:
 
-<div class="ruta">
-<a href="guia/">
-  <div class="n">1</div>
-  <strong>Mapa de lectura</strong>
-  <span>Qué página responde a qué pregunta, y en qué orden conviene ir.</span>
-</a>
-<a href="00-resumen/">
-  <div class="n">2</div>
-  <strong>Resumen (2 minutos)</strong>
-  <span>Problema, seis dominios y por qué gana Random Forest.</span>
-</a>
-<a href="03-asignacion-dominios/">
-  <div class="n">3</div>
-  <strong>Asignación de dominios</strong>
-  <span>La etapa que no se automatiza: algoritmo + criterio geológico.</span>
-</a>
-<a href="09-orange-colab/">
-  <div class="n">4</div>
-  <strong>Probar sin Python</strong>
-  <span>Orange (como la tesis) o Google Colab (un clic en el navegador).</span>
-</a>
+<div class="ruta" markdown>
+
+[**1 · Mapa de lectura**
+<span>Qué página responde a qué pregunta, y en qué orden conviene ir.</span>](guia.md)
+
+[**2 · Resumen (2 minutos)**
+<span>Problema, seis dominios y por qué gana Random Forest.</span>](00-resumen.md)
+
+[**3 · Asignación de dominios**
+<span>La etapa que no se automatiza: algoritmo + criterio geológico.</span>](03-asignacion-dominios.md)
+
+[**4 · Probar sin Python**
+<span>Orange (como la tesis) o Google Colab (un clic en el navegador).</span>](09-orange-colab.md)
+
 </div>
 
 <div class="grid cards" markdown>

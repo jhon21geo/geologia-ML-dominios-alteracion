@@ -15,6 +15,7 @@ puedan discutirlo y llevarlo a sus proyectos** sin pedir acceso a una unidad.
 | Criticar k=5, los seis dominios o el SVM | [Issue de opinión](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues/new?template=opinion.yml) |
 | Contar una replicación | [Issue de replicación](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues/new?template=replicacion.yml) |
 | Reportar un error de código | [Issue de error](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues/new?template=bug.yml) |
+| Proponer una mejora | [Issue de mejora](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues/new?template=mejora.yml) |
 | Enviar código | Pull request (ver [CONTRIBUTING.md](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/blob/main/CONTRIBUTING.md)) |
 
 ## Cómo probar el método si no programas

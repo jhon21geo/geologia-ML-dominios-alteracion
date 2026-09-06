@@ -96,8 +96,9 @@ tests/
 ## Documentación
 
 - **Visor de lectura (tesis resumida y PDF):** [https://jhon21geo.github.io/geologia-ML-dominios-alteracion/](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/)
-- Cómo aplicar el método a *tus* sondajes: [docs/06-replicacion.md](docs/06-replicacion.md)
-- **Sin programar:** [Orange y Google Colab](docs/09-orange-colab.md)
+- PDF (págs. 1–151): [https://jhon21geo.github.io/geologia-ML-dominios-alteracion/tesis-pdf/](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/tesis-pdf/)
+- Cómo aplicar el método a *tus* sondajes: [https://jhon21geo.github.io/geologia-ML-dominios-alteracion/06-replicacion/](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/06-replicacion/)
+- **Sin programar:** [Orange y Google Colab](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/)
 
 ## Contacto
 
