@@ -7,7 +7,7 @@ hide:
 
 <p class="hero-brand">
 <a href="https://www.uni.edu.pe/" title="Universidad Nacional de Ingeniería">
-<img src="assets/uni-escudo.png" alt="Escudo de la Universidad Nacional de Ingeniería"/>
+<img src="assets/uni-escudo-blanco.png" alt="Escudo de la Universidad Nacional de Ingeniería"/>
 </a>
 </p>
 
@@ -33,7 +33,7 @@ Título profesional de Ingeniero Geólogo · FIGMM · Universidad Nacional de In
 <img src="assets/icon-linkedin.svg" alt=""/> LinkedIn
 </a>
 <a href="https://www.uni.edu.pe/" title="Universidad Nacional de Ingeniería">
-<img class="escudo" src="assets/uni-escudo-sm.png" alt=""/> UNI
+<img class="escudo" src="assets/uni-escudo-blanco-sm.png" alt=""/> UNI
 </a>
 <a href="https://orcid.org/0009-0007-5912-5915" title="ORCID">ORCID 0009-0007-5912-5915</a>
 </p>

@@ -1,34 +1,35 @@
-/* Paleta académica: navy, granate UNI y oro. Fondo papel. */
+/* Paleta institucional UNI: guinda, blanco y oro. Fondo papel. */
 
 :root,
 [data-md-color-scheme="default"],
 [data-md-color-primary="indigo"],
-[data-md-color-primary="teal"] {
-  --md-primary-fg-color: #1b2a4a;
-  --md-primary-fg-color--light: #2c3f66;
-  --md-primary-fg-color--dark: #121c33;
-  --md-accent-fg-color: #b08d3a;
-  --md-accent-fg-color--transparent: rgba(176, 141, 58, 0.14);
-  --md-default-bg-color: #f6f3ec;
+[data-md-color-primary="teal"],
+[data-md-color-primary="red"] {
+  --md-primary-fg-color: #60161e;
+  --md-primary-fg-color--light: #7a2430;
+  --md-primary-fg-color--dark: #4a1018;
+  --md-accent-fg-color: #a4912d;
+  --md-accent-fg-color--transparent: rgba(164, 145, 45, 0.16);
+  --md-default-bg-color: #f5f1e9;
   --md-default-fg-color: #1a1c1e;
-  --md-typeset-a-color: #1b2a4a;
-  --md-footer-bg-color: #121c33;
+  --md-typeset-a-color: #60161e;
+  --md-footer-bg-color: #4a1018;
 }
 
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #1b2a4a;
-  --md-primary-fg-color--light: #2c3f66;
-  --md-primary-fg-color--dark: #0d1424;
-  --md-accent-fg-color: #c4a35a;
-  --md-typeset-a-color: #d4b56a;
+  --md-primary-fg-color: #60161e;
+  --md-primary-fg-color--light: #7a2430;
+  --md-primary-fg-color--dark: #3a0c12;
+  --md-accent-fg-color: #c4b056;
+  --md-typeset-a-color: #d4c06a;
 }
 
 .md-header,
 .md-tabs {
-  background: linear-gradient(90deg, #121c33 0%, #1b2a4a 62%, #5c1c28 160%) !important;
-  background-color: #1b2a4a !important;
+  background: #60161e !important;
+  background-color: #60161e !important;
   box-shadow: none;
-  border-bottom: 1px solid rgba(196, 163, 90, 0.35);
+  border-bottom: 1px solid #a4912d;
 }
 
 .md-header__button.md-logo img {
@@ -46,7 +47,7 @@
 .md-typeset h3 {
   font-weight: 650;
   letter-spacing: -0.015em;
-  color: #121c33;
+  color: #4a1018;
 }
 
 [data-md-color-scheme="slate"] .md-typeset h1,
@@ -56,7 +57,7 @@
 }
 
 .md-typeset h2 {
-  border-bottom: 1px solid rgba(27, 42, 74, 0.14);
+  border-bottom: 1px solid rgba(96, 22, 30, 0.16);
   padding-bottom: 0.2em;
   margin-top: 1.7em;
 }
@@ -84,13 +85,13 @@
   grid-template-columns: auto 1fr;
   gap: 1.15rem 1.35rem;
   align-items: center;
-  background: linear-gradient(148deg, #121c33 0%, #1b2a4a 52%, #5c1c28 125%);
+  background: #60161e;
   color: #fff;
   padding: 1.45rem 1.35rem 1.3rem;
   border-radius: 6px;
   margin: 0 0 1.4rem;
-  border: 1px solid rgba(196, 163, 90, 0.45);
-  box-shadow: 0 8px 28px rgba(18, 28, 51, 0.18);
+  border: 1px solid #a4912d;
+  box-shadow: 0 8px 28px rgba(74, 16, 24, 0.22);
 }
 
 .hero-brand {
@@ -127,10 +128,13 @@
 }
 
 .logo-row {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.95rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #a4912d;
+  border-radius: 8px;
 }
 
 .logo-row a {
@@ -138,7 +142,7 @@
   align-items: center;
   gap: 0.4rem;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(196, 163, 90, 0.5);
+  border: 1px solid rgba(164, 145, 45, 0.65);
   border-radius: 999px;
   padding: 0.22rem 0.75rem 0.22rem 0.28rem;
   color: #f7f4ee !important;
@@ -149,7 +153,7 @@
 }
 
 .logo-row a:hover {
-  background: rgba(196, 163, 90, 0.22);
+  background: rgba(164, 145, 45, 0.28);
 }
 
 .logo-row img {
@@ -176,7 +180,7 @@
   align-items: center;
   margin: 0.2rem 0 1.2rem;
   padding: 0.65rem 0.2rem 0.85rem;
-  border-bottom: 1px solid rgba(27, 42, 74, 0.12);
+  border-bottom: 1px solid rgba(96, 22, 30, 0.14);
 }
 
 .filiacion a {
@@ -185,12 +189,12 @@
   gap: 0.4rem;
   font-size: 0.82rem;
   font-weight: 600;
-  color: #1b2a4a !important;
+  color: #60161e !important;
   text-decoration: none !important;
 }
 
 .filiacion a:hover {
-  color: #5c1c28 !important;
+  color: #4a1018 !important;
 }
 
 .filiacion img {
@@ -221,8 +225,8 @@
   letter-spacing: 0.01em;
 }
 
-.pills .argavd { background: #f3e4ea; color: #5c1c28; }
-.pills .fil { background: #dce4f0; color: #1b2a4a; }
+.pills .argavd { background: #f3e4ea; color: #60161e; }
+.pills .fil { background: #e8e0d4; color: #4a1018; }
 .pills .arg { background: #efe4c8; color: #5c4310; }
 .pills .pro { background: #dce8dc; color: #1d3a24; }
 .pills .sk { background: #e7dcd0; color: #4a3220; }
@@ -242,23 +246,23 @@
 .ruta a {
   display: block;
   padding: 0.95rem 1rem 0.9rem;
-  border: 1px solid rgba(27, 42, 74, 0.16);
+  border: 1px solid rgba(96, 22, 30, 0.16);
   border-radius: 4px;
   color: inherit !important;
   text-decoration: none !important;
-  background: #fffcf7;
+  background: #fcfaf5;
   height: 100%;
 }
 
 .ruta a:hover {
-  border-color: #b08d3a;
-  box-shadow: 0 6px 18px rgba(18, 28, 51, 0.08);
+  border-color: #a4912d;
+  box-shadow: 0 6px 18px rgba(74, 16, 24, 0.08);
 }
 
 .ruta strong {
   display: block;
   margin-bottom: 0.25rem;
-  color: #1b2a4a;
+  color: #60161e;
 }
 
 .ruta span {
@@ -271,8 +275,8 @@
 .siguiente {
   margin-top: 2rem;
   padding: 0.9rem 1rem;
-  border-left: 4px solid #b08d3a;
-  background: rgba(27, 42, 74, 0.05);
+  border-left: 4px solid #a4912d;
+  background: rgba(96, 22, 30, 0.05);
   border-radius: 0 4px 4px 0;
 }
 
@@ -282,11 +286,17 @@
 
 .md-typeset .grid.cards > ul > li {
   border-radius: 4px;
-  border-color: rgba(27, 42, 74, 0.16);
+  border-color: rgba(96, 22, 30, 0.16);
 }
 
 [data-md-color-scheme="slate"] .hero {
-  background: linear-gradient(148deg, #0d1424 0%, #162238 55%, #3a121a 130%);
+  background: #4a1018;
+}
+
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background: #4a1018 !important;
+  background-color: #4a1018 !important;
 }
 
 [data-md-color-scheme="slate"] .ruta a {
@@ -297,8 +307,8 @@
   color: inherit !important;
 }
 
-[data-md-color-scheme="slate"] .pills .argavd { background: #5c1c28; color: #f3e4ea; }
-[data-md-color-scheme="slate"] .pills .fil { background: #1b2a4a; color: #dce4f0; }
+[data-md-color-scheme="slate"] .pills .argavd { background: #60161e; color: #f3e4ea; }
+[data-md-color-scheme="slate"] .pills .fil { background: #4a1018; color: #e8e0d4; }
 [data-md-color-scheme="slate"] .pills .arg { background: #5c4310; color: #efe4c8; }
 [data-md-color-scheme="slate"] .pills .pro { background: #1d3a24; color: #dce8dc; }
 [data-md-color-scheme="slate"] .pills .sk { background: #4a3220; color: #e7dcd0; }

@@ -9,7 +9,7 @@ copyright: Mallma Espinoza, J. P. (2026). FIGMM · Universidad Nacional de Ingen
 theme:
   name: material
   language: es
-  logo: assets/uni-escudo-sm.png
+  logo: assets/uni-escudo-blanco-sm.png
   favicon: assets/favicon.png
   font:
     text: Source Serif 4
@@ -17,14 +17,14 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: red
       accent: amber
       toggle:
         icon: material/weather-night
         name: Modo oscuro
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: red
       accent: amber
       toggle:
         icon: material/weather-sunny
