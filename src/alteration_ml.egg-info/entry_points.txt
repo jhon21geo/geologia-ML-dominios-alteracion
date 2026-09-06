@@ -1,0 +1,2 @@
+[console_scripts]
+alteration-ml = alteration_ml.cli:main
