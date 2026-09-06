@@ -1,7 +1,9 @@
 /* Paleta académica: navy, granate UNI y oro. Fondo papel. */
 
 :root,
-[data-md-color-scheme="default"] {
+[data-md-color-scheme="default"],
+[data-md-color-primary="indigo"],
+[data-md-color-primary="teal"] {
   --md-primary-fg-color: #1b2a4a;
   --md-primary-fg-color--light: #2c3f66;
   --md-primary-fg-color--dark: #121c33;
@@ -23,7 +25,8 @@
 
 .md-header,
 .md-tabs {
-  background: linear-gradient(90deg, #121c33 0%, #1b2a4a 62%, #5c1c28 160%);
+  background: linear-gradient(90deg, #121c33 0%, #1b2a4a 62%, #5c1c28 160%) !important;
+  background-color: #1b2a4a !important;
   box-shadow: none;
   border-bottom: 1px solid rgba(196, 163, 90, 0.35);
 }
