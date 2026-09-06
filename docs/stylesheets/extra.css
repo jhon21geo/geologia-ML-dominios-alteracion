@@ -14,6 +14,7 @@
   --md-default-fg-color: #1a1c1e;
   --md-typeset-a-color: #60161e;
   --md-footer-bg-color: #4a1018;
+  --md-text-font-family: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
 }
 
 [data-md-color-scheme="slate"] {
