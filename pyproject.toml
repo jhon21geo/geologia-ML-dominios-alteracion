@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alteration-ml"
+version = "0.1.0"
+description = "Pipeline abierto para delimitar dominios de alteración hidrotermal con SWIR, geoquímica y machine learning."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Jhonatan Paul Mallma Espinoza" }]
+requires-python = ">=3.10"
+keywords = ["geologia", "alteracion", "SWIR", "geoquimica", "machine-learning"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "numpy>=1.22",
+    "pandas>=1.4",
+    "scikit-learn>=1.2",
+    "scipy>=1.8",
+    "matplotlib>=3.5",
+    "seaborn>=0.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.4"]
+docs = ["mkdocs>=1.5", "mkdocs-material>=9.0"]
+notebooks = ["jupyter>=1.0", "ipykernel>=6.0"]
+
+[project.scripts]
+alteration-ml = "alteration_ml.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/jhon21geo/geologia-ML-dominios-alteracion"
+Issues = "https://github.com/jhon21geo/geologia-ML-dominios-alteracion/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tesis — visor de lectura</title>
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; }
+    body { display: flex; flex-direction: column; background: #1b1b1b; color: #eee; }
+    header {
+      display: flex; gap: 0.5rem; align-items: center; justify-content: center;
+      flex-wrap: wrap; padding: 0.45rem 0.7rem; background: #111; border-bottom: 1px solid #333;
+      font-size: 0.9rem;
+    }
+    header button {
+      background: #2a2a2a; color: #eee; border: 1px solid #555; border-radius: 6px;
+      padding: 0.25rem 0.7rem; cursor: pointer;
+    }
+    header button:disabled { opacity: 0.4; cursor: default; }
+    #page, #zoom-label { min-width: 6.5rem; text-align: center; }
+    #hint { font-size: 0.75rem; color: #aaa; }
+    main {
+      flex: 1; overflow: auto; display: flex; justify-content: center; align-items: flex-start;
+      padding: 0.75rem; cursor: grab;
+    }
+    main.dragging { cursor: grabbing; user-select: none; }
+    canvas { background: #fff; box-shadow: 0 0 24px #0008; }
+    #status { padding: 2rem; color: #ccc; }
+  </style>
+</head>
+<body>
+  <header>
+    <button type="button" id="prev" aria-label="Página anterior">Anterior</button>
+    <span id="page">Cargando…</span>
+    <button type="button" id="next" aria-label="Página siguiente">Siguiente</button>
+    <button type="button" id="zoom-out" aria-label="Alejar">−</button>
+    <span id="zoom-label">125 %</span>
+    <button type="button" id="zoom-in" aria-label="Acercar">+</button>
+    <span id="hint">Rueda: zoom · Arrastrar: mover</span>
+  </header>
+  <main>
+    <div id="status">Abriendo la tesis en modo lectura…</div>
+    <canvas id="page-canvas" hidden></canvas>
+  </main>
+  <script type="module">
+    import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.min.mjs";
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.6.82/build/pdf.worker.min.mjs";
+
+    const LAST_PAGE = 151;
+    const canvas = document.getElementById("page-canvas");
+    const status = document.getElementById("status");
+    const pageLabel = document.getElementById("page");
+    const zoomLabel = document.getElementById("zoom-label");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+    const main = document.querySelector("main");
+    const pdfUrl = new URL("../Tesis.pdf", window.location.href).toString();
+
+    let pdfDoc = null;
+    let pageNum = 1;
+    let scale = 1.25;
+    let renderTask = null;
+    let zoomRaf = 0;
+
+    function lastVisible() {
+      return pdfDoc ? Math.min(LAST_PAGE, pdfDoc.numPages) : LAST_PAGE;
+    }
+
+    function zoomPercent() {
+      zoomLabel.textContent = `${Math.round(scale * 100)} %`;
+    }
+
+    async function renderPage(num) {
+      if (!pdfDoc) return;
+      num = Math.min(Math.max(1, num), lastVisible());
+      pageNum = num;
+      const page = await pdfDoc.getPage(num);
+      const viewport = page.getViewport({ scale });
+      const ctx = canvas.getContext("2d");
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      if (renderTask) {
+        try { renderTask.cancel(); } catch (_) { /* ignore */ }
+      }
+      renderTask = page.render({ canvasContext: ctx, viewport });
+      try {
+        await renderTask.promise;
+      } catch (err) {
+        if (err?.name !== "RenderingCancelledException") throw err;
+        return;
+      }
+      pageLabel.textContent = `${num} / ${lastVisible()}`;
+      zoomPercent();
+      prevBtn.disabled = num <= 1;
+      nextBtn.disabled = num >= lastVisible();
+    }
+
+    function bumpZoom(factor) {
+      scale = Math.min(3.5, Math.max(0.5, +(scale * factor).toFixed(3)));
+      zoomPercent();
+      if (zoomRaf) return;
+      zoomRaf = requestAnimationFrame(() => {
+        zoomRaf = 0;
+        renderPage(pageNum);
+      });
+    }
+
+    try {
+      pdfDoc = await pdfjsLib.getDocument({
+        url: pdfUrl,
+        disableRange: false,
+        disableStream: false,
+      }).promise;
+      status.hidden = true;
+      canvas.hidden = false;
+      await renderPage(pageNum);
+    } catch (err) {
+      status.textContent = "No se pudo abrir el PDF en el visor. Recarga la página.";
+      console.error(err);
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (pageNum <= 1) return;
+      renderPage(pageNum - 1);
+    });
+    nextBtn.addEventListener("click", () => {
+      if (!pdfDoc || pageNum >= lastVisible()) return;
+      renderPage(pageNum + 1);
+    });
+    document.getElementById("zoom-in").addEventListener("click", () => bumpZoom(1.15));
+    document.getElementById("zoom-out").addEventListener("click", () => bumpZoom(1 / 1.15));
+
+    main.addEventListener("wheel", (event) => {
+      event.preventDefault();
+      bumpZoom(event.deltaY > 0 ? 0.9 : 1.1);
+    }, { passive: false });
+
+    let dragging = false;
+    let dragX = 0;
+    let dragY = 0;
+    let scrollLeft = 0;
+    let scrollTop = 0;
+    main.addEventListener("pointerdown", (event) => {
+      if (event.button !== 0) return;
+      dragging = true;
+      main.classList.add("dragging");
+      dragX = event.clientX;
+      dragY = event.clientY;
+      scrollLeft = main.scrollLeft;
+      scrollTop = main.scrollTop;
+      main.setPointerCapture(event.pointerId);
+    });
+    main.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
+      main.scrollLeft = scrollLeft - (event.clientX - dragX);
+      main.scrollTop = scrollTop - (event.clientY - dragY);
+    });
+    const stopDrag = () => {
+      dragging = false;
+      main.classList.remove("dragging");
+    };
+    main.addEventListener("pointerup", stopDrag);
+    main.addEventListener("pointercancel", stopDrag);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "PageDown") nextBtn.click();
+      if (event.key === "ArrowLeft" || event.key === "PageUp") prevBtn.click();
+      if (event.key === "+" || event.key === "=") bumpZoom(1.15);
+      if (event.key === "-" || event.key === "_") bumpZoom(1 / 1.15);
+    });
+  </script>
+</body>
+</html>

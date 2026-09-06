@@ -1,0 +1,36 @@
+name: Opinión metodológica
+description: Comenta, critica o propone un cambio al flujo de la tesis.
+title: "[metodología] "
+labels: ["metodologia", "discusion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por revisar el flujo. Este espacio es para opiniones de terceros
+        sobre PCA, clustering, ensambles minerales, hiperparámetros o validación.
+  - type: dropdown
+    id: etapa
+    attributes:
+      label: Etapa del flujo
+      options:
+        - Datos y preproceso
+        - Espectrometría / ensambles
+        - No supervisado (PCA, jerárquico, K-Means)
+        - Supervisado (RF, k-NN, NN, SVM)
+        - Métricas y validación
+        - Transferencia a otro yacimiento
+        - Documentación
+    validations:
+      required: true
+  - type: textarea
+    id: opinion
+    attributes:
+      label: Opinión o pregunta
+      description: Qué funciona, qué no, y qué cambiarías. Sin datos confidenciales.
+    validations:
+      required: true
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidencia opcional
+      description: Métricas, figuras o referencias (no adjuntar datos de operaciones).
