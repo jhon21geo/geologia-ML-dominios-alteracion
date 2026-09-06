@@ -439,6 +439,10 @@
     min-height: 1.75rem;
   }
 
+  .md-header__title {
+    display: none;
+  }
+
   .md-header__topic {
     font-size: 0.6rem;
   }
