@@ -5,15 +5,14 @@ hide:
 
 # Cómo leer este visor
 
-Esto **no** es el PDF puesto en vertical. Es una versión resumida para
-entender el método: qué problema ataca, cómo se firman los dominios y qué
-algoritmo conviene. El [PDF (págs. 1–151)](tesis-pdf.md) queda para quien
-quiera el texto original.
+Versión condensada de la tesis para lectura en línea: problema de investigación,
+criterio de asignación de dominios y selección del clasificador. El
+[PDF (págs. 1–151)](tesis-pdf.md) conserva el texto original.
 
-!!! tip "Si solo tienes diez minutos"
-    1. [Resumen](00-resumen.md) — el argumento entero.
-    2. [Asignación de dominios](03-asignacion-dominios.md) — la idea que más se malinterpreta.
-    3. [Resultados](04-modelamiento-ml.md) — por qué Random Forest y no SVM.
+!!! abstract "Lectura mínima"
+    1. [Resumen](00-resumen.md) — formulación y resultados.
+    2. [Asignación de dominios](03-asignacion-dominios.md) — clúster espectral frente a `MOD_ALT`.
+    3. [Resultados](04-modelamiento-ml.md) — Random Forest frente a SVM, k-NN y MLP.
 
 ## Qué página responde a qué
 

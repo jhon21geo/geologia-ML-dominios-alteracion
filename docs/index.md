@@ -5,31 +5,49 @@ hide:
 
 <div class="hero" markdown>
 
-# Delimitación de dominios de alteración con machine learning
+<p class="hero-brand">
+<a href="https://www.uni.edu.pe/" title="Universidad Nacional de Ingeniería">
+<img src="assets/uni-escudo.png" alt="Escudo de la Universidad Nacional de Ingeniería"/>
+</a>
+</p>
 
-Tesis de pregrado (versión resumida para leer en línea). El método une
-**espectro SWIR–VNIR**, **geoquímica de sondaje** y el **juicio del geólogo**
-para definir seis dominios de alteración y luego clasificarlos.
+<div markdown>
+
+# Delimitación de dominios geológicos de alteración mediante firmas espectrales, geoquímica y aprendizaje automático
+
+Tesis de pregrado. Se formula un flujo cuantitativo para clasificar dominios de
+alteración hidrotermal a partir de espectrometría **SWIR–VNIR**, geoquímica
+multielemental de sondaje y criterio geológico, con seis clases mineralógicas
+y evaluación comparativa de clasificadores supervisados.
 
 <p class="meta">
 Jhonatan Paul Mallma Espinoza · Asesor: MSc. César Augusto Mendoza Tarazona<br>
-Ingeniero Geólogo · FIGMM · Universidad Nacional de Ingeniería · Lima, 2026
+Título profesional de Ingeniero Geólogo · FIGMM · Universidad Nacional de Ingeniería · Lima, 2026
 </p>
 
-<p class="contacto">
-<a href="mailto:jhonatangeo21@gmail.com">jhonatangeo21@gmail.com</a>
-·
-<a href="https://www.linkedin.com/in/geomin">LinkedIn</a>
-·
-<a href="https://orcid.org/0009-0007-5912-5915">ORCID</a>
+<p class="logo-row">
+<a href="mailto:jhonatangeo21@gmail.com" title="Correo electrónico">
+<img src="assets/icon-correo.svg" alt=""/> Correo
+</a>
+<a href="https://www.linkedin.com/in/geomin" title="Perfil de LinkedIn">
+<img src="assets/icon-linkedin.svg" alt=""/> LinkedIn
+</a>
+<a href="https://www.uni.edu.pe/" title="Universidad Nacional de Ingeniería">
+<img class="escudo" src="assets/uni-escudo-sm.png" alt=""/> UNI
+</a>
+<a href="https://orcid.org/0009-0007-5912-5915" title="ORCID">ORCID 0009-0007-5912-5915</a>
 </p>
 
 </div>
+</div>
 
-**Idea central:** el clustering propone grupos; el geólogo los convierte en
-dominios (`MOD_ALT`); **Random Forest** extiende esa firma al resto de la
-malla. Los datos de este repositorio son **sintéticos** (mismos ensambles, sin
-detalle de la unidad de calibración).
+La hipótesis de trabajo es que el aprendizaje no supervisado (PCA, agrupamiento
+jerárquico y K-Means) **propone** agrupaciones espectrales, pero el dominio
+geológico (`MOD_ALT`) se define cuando el geólogo valida el ensamble diagnóstico
+y la continuidad espacial. El clasificador supervisado —**Random Forest** en
+esta investigación— extiende esa firma al resto de la malla. El repositorio
+reproduce el flujo con **datos sintéticos** de los mismos ensambles, sin
+geometría de la unidad de calibración.
 
 <div class="pills">
   <span class="argavd">ArgAvd · argílica avanzada</span>
@@ -40,34 +58,33 @@ detalle de la unidad de calibración).
   <span class="oxd">Oxd · óxidos</span>
 </div>
 
-## Empieza por aquí
+## Recorrido de lectura
 
-El visor no hay que leerlo de cabo a rabo. Elige un camino:
+El visor condensa la tesis. No es necesario seguir el orden capitular:
 
 <div class="ruta" markdown>
 
 [**1 · Mapa de lectura**
-<span>Qué página responde a qué pregunta, y en qué orden conviene ir.</span>](guia.md)
+<span>Correspondencia entre preguntas de investigación y secciones del visor.</span>](guia.md)
 
-[**2 · Resumen (2 minutos)**
-<span>Problema, seis dominios y por qué gana Random Forest.</span>](00-resumen.md)
+[**2 · Resumen y abstract**
+<span>Problema, seis dominios y desempeño relativo de los clasificadores.</span>](00-resumen.md)
 
 [**3 · Asignación de dominios**
-<span>La etapa que no se automatiza: algoritmo + criterio geológico.</span>](03-asignacion-dominios.md)
+<span>Etapa crítica: clustering espectral y corte geológico de `MOD_ALT`.</span>](03-asignacion-dominios.md)
 
-[**4 · Probar sin Python**
-<span>Orange (como la tesis) o Google Colab (un clic en el navegador).</span>](09-orange-colab.md)
+[**4 · Replicación experimental**
+<span>Orange, Google Colab o pipeline en Python sobre el conjunto sintético.</span>](09-orange-colab.md)
 
 </div>
 
 <div class="grid cards" markdown>
 
--   :material-book-open-page-variant: **Leer la tesis resumida**
+-   :material-book-open-page-variant: **Tesis resumida**
 
     ---
 
-    Capítulos condensados, figuras del flujo y el PDF (páginas 1–151) en
-    solo lectura.
+    Capítulos condensados, figuras del flujo y el PDF (páginas 1–151).
 
     [:octicons-arrow-right-24: Abrir el visor](guia.md)
 
@@ -75,22 +92,21 @@ El visor no hay que leerlo de cabo a rabo. Elige un camino:
 
     ---
 
-    Para quien no programa: el mismo método en lienzo de widgets o en un
-    cuaderno en la nube.
+    Reproducción del experimento sin entorno Python local (lienzo de widgets o cuaderno en la nube).
 
-    [:octicons-arrow-right-24: Probar el método](09-orange-colab.md)
+    [:octicons-arrow-right-24: Protocolo experimental](09-orange-colab.md)
 
--   :material-language-python: **Replicar en Python**
+-   :material-language-python: **Implementación en Python**
 
     ---
 
-    Pipeline con dato sintético, tests y plantilla para tus sondajes.
+    Paquete `alteration_ml`, datos sintéticos, pruebas automáticas y plantilla para sondajes propios.
 
-    [:octicons-arrow-right-24: Código local](06-replicacion.md)
+    [:octicons-arrow-right-24: Replicar el pipeline](06-replicacion.md)
 
 </div>
 
-## El método en un vistazo
+## Esquema metodológico
 
 ```mermaid
 flowchart LR
@@ -103,7 +119,7 @@ flowchart LR
 
 <figure markdown>
   ![Esquema de asignación de dominios](assets/13_asignacion_esquema.png)
-  <figcaption>Figura guía: el clúster no es el dominio. El geólogo corta, fusiona o descarta intervalos antes de entrenar el clasificador.</figcaption>
+  <figcaption>Figura 1. El clúster espectral no equivale al dominio geológico. El geólogo recorta, fusiona o descarta intervalos antes del entrenamiento supervisado.</figcaption>
 </figure>
 
 ## Cómo citar
@@ -114,14 +130,16 @@ flowchart LR
 
     **APA 7.** Mallma, J. (2026). *Delimitación de los dominios geológicos de alteración desde firmas espectrales y geoquímica mediante el empleo de machine learning* [Tesis de pregrado, Universidad Nacional de Ingeniería]. Repositorio institucional Cybertesis UNI.
 
-ORCID del autor: [0009-0007-5912-5915](https://orcid.org/0009-0007-5912-5915).
+ORCID del autor: [0009-0007-5912-5915](https://orcid.org/0009-0007-5912-5915) ·
 Asesor: [0009-0009-5452-3636](https://orcid.org/0009-0009-5452-3636).
 
-## Contacto
+## Filiación y contacto
 
-- Correo: [jhonatangeo21@gmail.com](mailto:jhonatangeo21@gmail.com)
-- LinkedIn: [linkedin.com/in/geomin](https://www.linkedin.com/in/geomin)
-- GitHub: [jhon21geo](https://github.com/jhon21geo)
+<div class="filiacion" markdown>
+<a href="https://www.uni.edu.pe/"><img class="escudo" src="assets/uni-escudo-sm.png" alt="UNI"/> Universidad Nacional de Ingeniería</a>
+<a href="mailto:jhonatangeo21@gmail.com"><img src="assets/icon-correo.svg" alt=""/> jhonatangeo21@gmail.com</a>
+<a href="https://www.linkedin.com/in/geomin"><img src="assets/icon-linkedin.svg" alt=""/> linkedin.com/in/geomin</a>
+</div>
 
 Sitio publicado:
 [jhon21geo.github.io/geologia-ML-dominios-alteracion](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/).[^url]

@@ -1,9 +1,9 @@
 # Resumen y abstract
 
-!!! success "Qué debe quedarte de esta página"
-    1. El cuello de botella ya no es adquirir datos: es **integrar** espectro, química y logueo.
-    2. Hay **seis dominios** de alteración. No salen solos del K-Means: el geólogo los nombra con el ensamble y la continuidad 3D.
-    3. Entre SVM, k-NN, red neuronal y bosques aleatorios, **Random Forest** fue el más estable para predecir esos dominios desde la geoquímica.
+!!! abstract "Síntesis operativa"
+    1. El cuello de botella no es la adquisición, sino la **integración** de espectro, geoquímica y logueo.
+    2. Los **seis dominios** no coinciden con K-Means: el geólogo los nombra por ensamble diagnóstico y continuidad 3D.
+    3. Entre SVM, k-NN, perceptrón multicapa y bosques aleatorios, **Random Forest** fue el clasificador más estable sobre geoquímica.
 
 | Código | Dominio | Ensamble que lo sostiene |
 | --- | --- | --- |
