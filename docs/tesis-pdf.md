@@ -5,7 +5,7 @@ hide:
 ---
 
 <style>
-  .md-typeset > h1:first-child { display: none; }
+  .md-content__inner h1 { display: none; }
   .md-content__inner { padding-top: 0.4rem; }
   iframe { display: block; }
 </style>
