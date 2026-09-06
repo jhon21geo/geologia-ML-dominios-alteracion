@@ -1,5 +1,0 @@
-modelo,AUC,accuracy,balanced_acc,precision,recall,f1
-random_forest,0.86,0.616,0.606,0.623,0.606,0.597
-neural_network,0.814,0.549,0.508,0.509,0.508,0.506
-knn,0.77,0.518,0.484,0.491,0.484,0.486
-svm,0.798,0.2,0.297,0.252,0.297,0.165
