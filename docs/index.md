@@ -5,40 +5,18 @@ hide:
 
 <div class="hero" markdown>
 
-<p class="hero-brand">
-<a href="https://www.uni.edu.pe/" title="Universidad Nacional de Ingeniería">
-<img src="assets/uni-escudo-blanco.png" alt="Escudo de la Universidad Nacional de Ingeniería"/>
-</a>
-</p>
-
-<div markdown>
-
 # Delimitación de dominios geológicos de alteración mediante firmas espectrales, geoquímica y aprendizaje automático
 
-Tesis de pregrado. Se formula un flujo cuantitativo para clasificar dominios de
-alteración hidrotermal a partir de espectrometría **SWIR–VNIR**, geoquímica
-multielemental de sondaje y criterio geológico, con seis clases mineralógicas
-y evaluación comparativa de clasificadores supervisados.
+Tesis de pregrado. Flujo cuantitativo para clasificar dominios de alteración
+hidrotermal a partir de espectrometría **SWIR–VNIR**, geoquímica de sondaje y
+criterio geológico: seis clases mineralógicas y comparación de clasificadores
+supervisados.
 
 <p class="meta">
 Jhonatan Paul Mallma Espinoza · Asesor: MSc. César Augusto Mendoza Tarazona<br>
-Título profesional de Ingeniero Geólogo · FIGMM · Universidad Nacional de Ingeniería · Lima, 2026
+Ingeniero Geólogo · FIGMM · Universidad Nacional de Ingeniería · Lima, 2026
 </p>
 
-<p class="logo-row">
-<a href="mailto:jhonatangeo21@gmail.com" title="Correo electrónico">
-<img src="assets/icon-correo.svg" alt=""/> Correo
-</a>
-<a href="https://www.linkedin.com/in/geomin" title="Perfil de LinkedIn">
-<img src="assets/icon-linkedin.svg" alt=""/> LinkedIn
-</a>
-<a href="https://www.uni.edu.pe/" title="Universidad Nacional de Ingeniería">
-<img class="escudo" src="assets/uni-escudo-blanco-sm.png" alt=""/> UNI
-</a>
-<a href="https://orcid.org/0009-0007-5912-5915" title="ORCID">ORCID 0009-0007-5912-5915</a>
-</p>
-
-</div>
 </div>
 
 La hipótesis de trabajo es que el aprendizaje no supervisado (PCA, agrupamiento

@@ -32,9 +32,142 @@
   border-bottom: 1px solid #a4912d;
 }
 
+.md-header {
+  z-index: 5;
+}
+
+.md-header__inner {
+  min-height: 2.1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  gap: 0.25rem;
+}
+
+.header-start,
+.header-end,
+.header-search,
+.header-logos {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.header-start {
+  flex: 1 1 auto;
+}
+
+.header-start .md-header__title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header-end {
+  flex: 0 0 auto;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.header-search {
+  flex: 0 0 auto;
+}
+
+.md-header__button {
+  margin: 0.05rem;
+  padding: 0.22rem;
+}
+
+.md-header__button.md-logo {
+  padding: 0.12rem;
+  margin: 0.05rem 0.1rem 0.05rem 0;
+}
+
 .md-header__button.md-logo img {
-  height: 2.15rem;
+  height: 1.35rem;
   width: auto;
+}
+
+.md-header__topic {
+  font-size: 0.72rem;
+}
+
+.md-tabs {
+  min-height: 1.45rem;
+}
+
+.md-tabs__link {
+  margin-top: 0.22rem;
+  padding: 0 0.12rem 0.22rem;
+  font-size: 0.68rem;
+}
+
+.header-logos {
+  gap: 0;
+  margin: 0 0.05rem;
+}
+
+.header-logos a {
+  color: #fff !important;
+  opacity: 0.95;
+}
+
+.header-logos a:hover {
+  opacity: 1;
+  background: rgba(164, 145, 45, 0.22);
+  border-radius: 0.2rem;
+}
+
+.header-logos .header-uni {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logos img.escudo {
+  height: 1.15rem;
+  width: auto;
+  background: transparent;
+  border-radius: 0;
+}
+
+@media screen and (min-width: 60em) {
+  .md-header__inner.md-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 22rem) minmax(0, 1fr);
+    column-gap: 0.45rem;
+    align-items: center;
+  }
+
+  .header-start {
+    grid-column: 1;
+  }
+
+  .header-search {
+    grid-column: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-end {
+    grid-column: 3;
+    margin-left: 0;
+    justify-self: end;
+  }
+
+  .header-search .md-search {
+    width: 100%;
+    padding: 0.08rem 0;
+  }
+
+  .header-search .md-search__inner {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .header-end .md-header__source {
+    margin-left: 0.35rem;
+    max-width: 9.5rem;
+    width: auto;
+  }
 }
 
 .md-typeset {
@@ -81,48 +214,35 @@
 
 /* Portada */
 .hero {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.15rem 1.35rem;
-  align-items: center;
+  display: block;
   background: #60161e;
   color: #fff;
-  padding: 1.45rem 1.35rem 1.3rem;
+  padding: 0.85rem 0.95rem 0.8rem;
   border-radius: 6px;
-  margin: 0 0 1.4rem;
+  margin: 0 0 1rem;
   border: 1px solid #a4912d;
   box-shadow: 0 8px 28px rgba(74, 16, 24, 0.22);
-}
-
-.hero-brand {
-  margin: 0;
-}
-
-.hero-brand img {
-  display: block;
-  height: 6.6rem;
-  width: auto;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 }
 
 .hero h1 {
   color: #f7f4ee !important;
   border: none;
-  margin: 0 0 0.45rem;
-  font-size: 1.48rem;
-  line-height: 1.28;
+  margin: 0 0 0.35rem;
+  font-size: 1.12rem;
+  line-height: 1.3;
 }
 
 .hero p {
   color: rgba(247, 244, 238, 0.94);
-  max-width: 42rem;
-  margin: 0.3rem 0;
-  font-size: 0.98em;
+  max-width: 36rem;
+  margin: 0.2rem 0;
+  font-size: 0.86em;
+  line-height: 1.55;
 }
 
 .hero .meta {
-  margin-top: 0.75rem;
-  font-size: 0.8em;
+  margin-top: 0.55rem;
+  font-size: 0.76em;
   letter-spacing: 0.01em;
   opacity: 0.9;
 }
@@ -315,12 +435,53 @@
 [data-md-color-scheme="slate"] .pills .oxd { background: #6b2e12; color: #ead4c4; }
 
 @media (max-width: 44rem) {
-  .hero {
-    grid-template-columns: 1fr;
-    justify-items: start;
+  .md-header__topic {
+    font-size: 0.64rem;
   }
 
-  .hero-brand img {
-    height: 4.8rem;
+  .header-logos a.md-header__button {
+    padding: 0.16rem;
+  }
+
+  .hero {
+    padding: 0.62rem 0.7rem 0.58rem;
+  }
+
+  .hero h1 {
+    font-size: 0.92rem;
+    line-height: 1.34;
+  }
+
+  .hero p {
+    font-size: 0.78em;
+    line-height: 1.52;
+  }
+
+  .hero .meta {
+    font-size: 0.68em;
+    line-height: 1.45;
+  }
+
+  .md-typeset {
+    font-size: 0.8rem;
+    line-height: 1.62;
+  }
+
+  .md-typeset h2 {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 30em) {
+  .md-header__title {
+    max-width: 5.2rem;
+  }
+
+  .hero h1 {
+    font-size: 0.84rem;
+  }
+
+  .hero p {
+    font-size: 0.74em;
   }
 }
