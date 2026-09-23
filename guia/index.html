@@ -287,7 +287,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-orange-colab/" class="md-tabs__link">
+        <a href="../10-geoia-dominios/" class="md-tabs__link">
           
   
   
@@ -917,6 +917,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../10-geoia-dominios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réplica en el navegador (GeoIA)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../09-orange-colab/" class="md-nav__link">
         
   
@@ -924,7 +952,7 @@
   <span class="md-ellipsis">
     
   
-    Orange y Google Colab
+    Orange, Colab y cuadernos
   
 
     
@@ -1135,9 +1163,15 @@
 <p>Versión condensada de la tesis para lectura en línea: problema de investigación,
 criterio de asignación de dominios y selección del clasificador. El
 <a href="../tesis-pdf/">PDF (págs. 1–151)</a> conserva el texto original.</p>
+<p>La forma más directa de <strong>probar</strong> el método es la réplica en el navegador:
+<a href="https://geoia.site/dominios-ml/">geoia.site/dominios-ml</a> (Fase 1 firma
+<code>MOD_ALT</code>, Fase 2 lienzo Orange, Fase 3 predice el 60 % ciego). Los
+<a href="../09-orange-colab/">cuadernos</a> hacen lo mismo con los hiperparámetros de la
+tesis.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Lectura mínima</p>
 <ol>
+<li><a href="../10-geoia-dominios/">Réplica GeoIA</a> — recorrer las tres fases.</li>
 <li><a href="../00-resumen/">Resumen</a> — formulación y resultados.</li>
 <li><a href="../03-asignacion-dominios/">Asignación de dominios</a> — clúster espectral frente a <code>MOD_ALT</code>.</li>
 <li><a href="../04-modelamiento-ml/">Resultados</a> — Random Forest frente a SVM, k-NN y MLP.</li>
@@ -1152,6 +1186,14 @@ criterio de asignación de dominios y selección del clasificador. El
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>¿Puedo verlo funcionar ahora, sin instalar nada?</td>
+<td><a href="https://geoia.site/dominios-ml/">GeoIA · Dominios ML</a></td>
+</tr>
+<tr>
+<td>¿Cómo se mapean las fases de GeoIA a la tesis?</td>
+<td><a href="../10-geoia-dominios/">Réplica en el navegador</a></td>
+</tr>
 <tr>
 <td>¿De qué trata la tesis, en una página?</td>
 <td><a href="../00-resumen/">Resumen y abstract</a></td>
@@ -1185,11 +1227,11 @@ criterio de asignación de dominios y selección del clasificador. El
 <td><a href="../05-conclusiones/">Conclusiones</a></td>
 </tr>
 <tr>
-<td>¿Puedo repetirlo sin programar?</td>
-<td><a href="../09-orange-colab/">Orange y Google Colab</a></td>
+<td>¿Quiero Orange, Colab o los cuadernos 01–03?</td>
+<td><a href="../09-orange-colab/">Orange, Colab y cuadernos</a></td>
 </tr>
 <tr>
-<td>¿Puedo pegarlo a mis sondajes?</td>
+<td>¿Puedo pegarlo a mis sondajes en Python?</td>
 <td><a href="../06-replicacion/">Replicar en Python</a></td>
 </tr>
 </tbody>
@@ -1201,20 +1243,24 @@ criterio de asignación de dominios y selección del clasificador. El
   C --&gt; D[Resultados]
   D --&gt; E{¿Quieres profundidad?}
   E --&gt;|Sí| F[Introducción, marco, espectro]
-  E --&gt;|Probar| G[Orange / Colab]
+  E --&gt;|Probar| G[GeoIA / Colab / Orange]
   F --&gt; H[PDF págs. 1–151]</code></pre>
 <p>Los capítulos 1, 2 y 4 (planteamiento, marco, espectro) son <strong>fondo</strong>. Sirven
 cuando ya tienes clara la distinción clúster ≠ dominio.</p>
 <h2 id="tres-avisos-para-no-mezclar-cifras">Tres avisos para no mezclar cifras<a class="headerlink" href="#tres-avisos-para-no-mezclar-cifras" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Dato de la tesis</strong> (Orange, calibración real) y <strong>dato de este repo</strong>
-   (scikit-learn, sintético) no se promedian. El ranking cualitativo sí se
-   reproduce: Random Forest primero, SVM último.</li>
+<li><strong>Dato de la tesis</strong> (Orange, calibración real), <strong>dato de este repo</strong>
+   (scikit-learn, sintético) y <strong>GeoIA</strong> (implementación en el navegador) no
+   se promedian. El ranking cualitativo sí se reproduce: Random Forest primero,
+   SVM último.</li>
 <li>K-Means usa <strong>k = 5</strong> sobre scores minerales. Los dominios geológicos son
    <strong>seis</strong> (<code>Arg</code>, <code>ArgAvd</code>, <code>Fil</code>, <code>Oxd</code>, <code>Pro</code>, <code>Sk</code>) porque el geólogo
-   nombra ensambles, no números de clúster.</li>
+   nombra ensambles, no números de clúster. En GeoIA el polígono sobre el PCA
+   es esa firma.</li>
 <li>El visor omite geometría y logística de la unidad. El análogo geológico es
-   un epitermal Au–Cu de alta sulfuración con transición a pórfido/skarn.</li>
+   un epitermal Au–Cu de alta sulfuración con transición a pórfido/skarn.
+   GeoIA reserva <strong>40 % / 60 % de collares</strong>; la tesis partió 80/20 sobre
+   tramos ya etiquetados.</li>
 </ol>
 <div class="siguiente">
 <p><strong>Siguiente:</strong> <a href="../00-resumen/">Resumen y abstract</a> — el argumento de la tesis
@@ -1340,6 +1386,14 @@ en dos idiomas.</p>
     
     <a href="https://www.uni.edu.pe/" target="_blank" rel="noopener" title="Universidad Nacional de Ingeniería" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M271.9 20.2c-9.8-5.6-21.9-5.6-31.8 0l-224 128c-12.6 7.2-18.8 22-15.1 36S17.5 208 32 208h32v208l-51.2 38.4C4.7 460.4 0 469.9 0 480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32 0-10.1-4.7-19.6-12.8-25.6L448 416V208h32c14.5 0 27.2-9.8 30.9-23.8s-2.5-28.8-15.1-36l-224-128zM400 208v208h-64V208zm-112 0v208h-64V208zm-112 0v208h-64V208zm80-112a32 32 0 1 1 0 64 32 32 0 1 1 0-64"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://geoia.site/dominios-ml/" target="_blank" rel="noopener" title="Réplica en el navegador (GeoIA)" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v151.5L7.5 426.3C2.6 435 0 444.7 0 454.7 0 486.4 25.6 512 57.3 512h333.4c31.6 0 57.3-25.6 57.3-57.3 0-10-2.6-19.8-7.5-28.4L320 215.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0zm-96 215.5V64h64v151.5c0 11.1 2.9 22.1 8.4 31.8L306 320H142l41.6-72.7c5.5-9.7 8.4-20.6 8.4-31.8"/></svg>
     </a>
   
     
