@@ -1,8 +1,9 @@
 # Replicar el pipeline
 
 !!! tip "¿No usas Python a diario?"
-    Empieza por **[Orange o Google Colab](09-orange-colab.md)**. Esta página es
-    el camino con código en tu máquina.
+    Empieza por **[GeoIA](https://geoia.site/dominios-ml/)** (navegador, puedes
+    cargar collar / assay / espectro) o por **[Colab](09-orange-colab.md)**.
+    Esta página es el camino con código en tu máquina.
 
 ## En este repositorio
 
@@ -13,12 +14,15 @@ python -m alteration_ml.cli run --profile thesis
 pytest
 ```
 
-Notebooks:
+Cuadernos (mismas fases que [GeoIA](10-geoia-dominios.md)):
 
-0. `notebooks/00_colab_pipeline.ipynb` (Google Colab, un clic)
-1. `notebooks/01_eda_espectral_geoquimica.ipynb`
-2. `notebooks/02_unsupervised_ensambles.ipynb`
-3. `notebooks/03_supervised_clasificacion.ipynb`
+0. `notebooks/00_colab_pipeline.ipynb` — pipeline completo (Google Colab)
+1. `notebooks/01_eda_espectral_geoquimica.ipynb` — tabla y ensambles
+2. `notebooks/02_unsupervised_ensambles.ipynb` — Fase 1 (PCA, dendrograma, k = 5)
+3. `notebooks/03_supervised_clasificacion.ipynb` — Fase 2 (RF, kNN, MLP, SVM)
+
+Colab del 00:
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jhon21geo/geologia-ML-dominios-alteracion/blob/main/notebooks/00_colab_pipeline.ipynb)
 
 ## En tus sondajes
 
@@ -30,6 +34,10 @@ WhiteMica, Chlorite, Carbonate, Epidote, Kaolinite, Dickite, Montmor,
 Alunite, Gypsum, Pyrophyllite, Diaspore, Zunyite, Water_silica,
 Hematite, Goethite, Au_ppm, As_ppm, S_pct, ... , MOD_ALT, labeled
 ```
+
+En GeoIA puedes cargar esas tablas **sin código** (collar + survey + assay +
+espectral, o un CSV de tramos con XYZ) y firmar `MOD_ALT` en el PCA. El
+paquete Python sirve cuando quieres los hiperparámetros publicados y tests.
 
 `MOD_ALT` puede ser nulo en tramos ciegos; `labeled=False` los excluye del
 entrenamiento.
@@ -69,6 +77,6 @@ sistema, el tamaño de muestra y las métricas.
 <div class="siguiente" markdown>
 
 **Siguiente:** [Opiniones y réplicas](07-contribuciones.md) si ya corriste el
-flujo, o [Orange y Colab](09-orange-colab.md) si aún no.
+flujo, o [GeoIA / Colab](09-orange-colab.md) si aún no.
 
 </div>

@@ -1,35 +1,40 @@
-# Orange y Google Colab (sin instalar Python)
+# Orange, Colab y cuadernos
 
-Si no programas a diario, **no hace falta una terminal**. La tesis se armó en
-**Orange** (lienzo de widgets). Este repo añade **Google Colab** (un cuaderno
-en el navegador). El código Python queda para quien quiera automatizar o
-llevar el método a otro yacimiento.
+Cuatro caminos para el mismo método. El más avanzado, alineado con lo que ya
+corre en producción, es **GeoIA**: PCA, firma de `MOD_ALT`, lienzo tipo Orange
+y predicción del 60 % de sondajes ciegos, **en el navegador**.
 
 <div class="grid cards" markdown>
 
--   :material-view-dashboard-variant: **Orange 3**
+-   :material-flask: **GeoIA (navegador)**
 
     ---
 
-    El mismo lienzo de la tesis. Instalas el programa, cargas el CSV sintético
-    y conectas los widgets.
+    Sin instalar nada. Dataset sintético o tus tablas (collar/assay/espectro).
 
-    [:octicons-arrow-right-24: Cómo armar el lienzo](#orange-como-en-la-tesis)
+    [:octicons-arrow-right-24: geoia.site/dominios-ml](https://geoia.site/dominios-ml/)
 
 -   :material-google: **Google Colab**
 
     ---
 
     Un clic, cuenta de Google, *Entorno de ejecución → Ejecutar todo*.
-    Ves el ranking RF / red / k-NN / SVM sobre dato sintético.
 
-    [:octicons-arrow-right-24: Abrir el cuaderno](#google-colab-un-clic)
+    [:octicons-arrow-right-24: Cuaderno 00](#google-colab-un-clic)
+
+-   :material-view-dashboard-variant: **Orange 3**
+
+    ---
+
+    El lienzo original de la tesis (widgets sobre scikit-learn).
+
+    [:octicons-arrow-right-24: Cómo armar el lienzo](#orange-como-en-la-tesis)
 
 -   :material-console: **Python local**
 
     ---
 
-    Para pegar el flujo a tus sondajes o contribuir código.
+    Paquete `alteration_ml` y cuadernos 01–03.
 
     [:octicons-arrow-right-24: Guía de replicación](06-replicacion.md)
 
@@ -37,31 +42,40 @@ llevar el método a otro yacimiento.
 
 | Camino | Qué necesitas | Para quién |
 | --- | --- | --- |
-| [Orange](#orange-como-en-la-tesis) | Instalar [Orange 3](https://orangedatamining.com/) (Windows/macOS/Linux) | Quien ya usó el flujo de la tesis o prefiere “cajas y flechas” |
-| [Google Colab](#google-colab-un-clic) | Cuenta de Google | Quien quiere ver el resultado sin instalar nada |
-| [Python local](06-replicacion.md) | `pip` y una consola | Quien va a replicar en sus sondajes o contribuir código |
+| [GeoIA](10-geoia-dominios.md) | Navegador | Quien quiere firmar `MOD_ALT` y ver Test & Score ya |
+| [Google Colab](#google-colab-un-clic) | Cuenta de Google | Quien quiere las cifras de `scikit-learn` sin instalar |
+| [Orange](#orange-como-en-la-tesis) | [Orange 3](https://orangedatamining.com/) | Quien replica el lienzo de la tesis |
+| [Python local](06-replicacion.md) | `pip` y una consola | Quien pega el flujo a sus sondajes |
 
 ## Google Colab (un clic)
 
-1. Abre el cuaderno:
-   [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jhon21geo/geologia-ML-dominios-alteracion/blob/cursor/metodologia-tesis-sintetica-fd6d/notebooks/00_colab_pipeline.ipynb)
+El cuaderno **00** clona este repositorio (`main`), instala `alteration_ml` y
+corre el perfil `thesis` sobre el sintético: PCA, K-Means y los cuatro
+clasificadores.
+
+1. Abre:
+   [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jhon21geo/geologia-ML-dominios-alteracion/blob/main/notebooks/00_colab_pipeline.ipynb)
 2. Menú **Entorno de ejecución → Ejecutar todo**.
-3. Espera a que instale el paquete y genere las figuras. Al final verás el
-   ranking RF / red / k-NN / SVM (el mismo de la tesis, sobre dato sintético).
+3. Al final aparece el ranking RF / red / k-NN / SVM.
 
-El cuaderno clona este repositorio, instala dependencias y corre
-`alteration_ml` en la nube. No edita tus archivos locales.
+Los otros tres cuadernos profundizan las mismas fases que GeoIA:
 
-!!! tip "Si el botón pide una rama"
-    El cuaderno aún no está en `main`. Ábrelo desde el repositorio:
-    [`notebooks/00_colab_pipeline.ipynb`](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/blob/cursor/metodologia-tesis-sintetica-fd6d/notebooks/00_colab_pipeline.ipynb)
-    → icono de Colab. Tras fusionar el PR, el mismo archivo en `main` bastará.
+| Cuaderno | Fase | Enlace |
+| --- | --- | --- |
+| `00_colab_pipeline.ipynb` | Todo el flujo | [Colab](https://colab.research.google.com/github/jhon21geo/geologia-ML-dominios-alteracion/blob/main/notebooks/00_colab_pipeline.ipynb) |
+| `01_eda_espectral_geoquimica.ipynb` | Logueo / tabla | [GitHub](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/blob/main/notebooks/01_eda_espectral_geoquimica.ipynb) |
+| `02_unsupervised_ensambles.ipynb` | Fase 1 (PCA, dendrograma, k = 5) | [GitHub](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/blob/main/notebooks/02_unsupervised_ensambles.ipynb) |
+| `03_supervised_clasificacion.ipynb` | Fase 2 (RF, kNN, MLP, SVM) | [GitHub](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/blob/main/notebooks/03_supervised_clasificacion.ipynb) |
+
+En local: clona el repo y ábrelos desde `notebooks/` con Jupyter. Las rutas
+relativas a `data/synthetic/` asumen que el kernel arranca en esa carpeta.
 
 ## Orange (como en la tesis)
 
 Orange es software libre de la Universidad de Ljubljana. La tesis usó sus
 widgets sobre scikit-learn (Figuras 30–32). Aquí se replica el **mismo
-lienzo** con el CSV sintético.
+lienzo** con el CSV sintético. GeoIA dibuja ese lienzo en la Fase 2; Orange
+es la vía que **sí** usa kernel RBF y 100 neuronas / 200 iteraciones.
 
 ### 1. Bajar Orange y el CSV
 
@@ -84,16 +98,18 @@ flowchart LR
   F --> G[Scatter Plot]
 ```
 
-**Select Columns (espectro).** Features: los 13 minerales SWIR más Hematite y
-Goethite. Ignora `x, y, z, holeid, sample_id` y la geoquímica.
+**Select Columns (espectro).** Features: los **13 minerales SWIR** más
+**Hematite** y **Goethite** (15 columnas; las mismas de GeoIA). Ignora
+`x, y, z, holeid, sample_id` y la geoquímica.
 
 **Preprocess.** Imputar mediana; continuar variables; normalizar (estandarizar).
 
 **PCA.** Componentes suficientes para ver PC1–PC2 (en la tesis se interpretó
-el biplot de minerales).
+el biplot de minerales; en GeoIA puedes cambiar PC1–PC4).
 
 **Hierarchical Clustering.** Distancia euclidiana, enlace Ward, corte en 5
-grupos de *minerales* si transpones, o de muestras si no.
+grupos de *minerales* si transpones, o de muestras si no. GeoIA usa enlace
+promedio sobre las 15 variables.
 
 **k-Means.** k = 5, inicialización k-means++, semilla fija si el widget lo
 permite.
@@ -102,9 +118,9 @@ permite.
 del algoritmo, no el dominio.
 
 Luego el geólogo asigna `MOD_ALT` (ver
-[Asignación de dominios](03-asignacion-dominios.md)). En Orange puedes
-guardar el clúster, exportar a CSV y volver a cargar ya con la columna
-`MOD_ALT` firmada.
+[Asignación de dominios](03-asignacion-dominios.md)). En GeoIA lo haces con un
+polígono sobre collares logueados. En Orange puedes guardar el clúster,
+exportar a CSV y volver a cargar ya con la columna `MOD_ALT` firmada.
 
 ### 3. Supervisado (geoquímica → MOD_ALT)
 
@@ -130,8 +146,9 @@ flowchart LR
 
 **Preprocess.** Igual: mediana, continuar, estandarizar (Z-score).
 
-**Data Sampler.** 80 % entrenamiento / 20 % prueba, estratificado por
-`MOD_ALT` si el widget lo ofrece.
+**Data Sampler.** En la tesis: 80 % entrenamiento / 20 % prueba, estratificado
+por `MOD_ALT`. En GeoIA la reserva es **por collar** (40 % logueados / 60 %
+ciegos).
 
 Hiperparámetros de la tesis (Tablas 19–22):
 
@@ -147,12 +164,12 @@ dominio). En la tesis, Random Forest ganó; SVM quedó último.
 
 ### 4. Predicción de tramos nuevos
 
-**Predictions** (o el widget Predictions) sobre el CSV de química **sin**
-etiqueta. Exporta `holeid`, `from_m`, `to_m` y la clase predicha para
-Leapfrog u otro modelador 3D.
+**Predictions** sobre el CSV de química **sin** etiqueta. Exporta `holeid`,
+`from_m`, `to_m` y la clase predicha para Leapfrog u otro modelador 3D. En
+GeoIA eso es la **Fase 3** (collares no logueados o un CSV propio).
 
-## Qué no hace Orange ni Colab por ti
+## Qué no hacen GeoIA, Orange ni Colab por ti
 
-El **juicio geológico** al etiquetar dominios. Ni el lienzo ni el cuaderno
-sustituyen mirar la continuidad en sección. Ver
+El **juicio geológico** al etiquetar dominios. Ni el lienzo, ni el cuaderno,
+ni el polígono en el PCA sustituyen mirar la continuidad en sección. Ver
 [Asignación de dominios](03-asignacion-dominios.md).

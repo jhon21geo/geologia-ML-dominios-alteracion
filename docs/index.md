@@ -28,6 +28,12 @@ esta investigación— extiende esa firma al resto de la malla. El repositorio
 reproduce el flujo con **datos sintéticos** de los mismos ensambles, sin
 geometría de la unidad de calibración.
 
+La réplica interactiva —logueo, firmar `MOD_ALT` en el PCA, lienzo tipo Orange
+y predicción del 60 % de sondajes ciegos— está en
+**[geoia.site/dominios-ml](https://geoia.site/dominios-ml/)**. Corre en el
+navegador, sin instalar nada. Los [cuadernos](09-orange-colab.md) y el paquete
+Python reproducen los mismos pasos con los hiperparámetros publicados.
+
 <div class="pills">
   <span class="argavd">ArgAvd · argílica avanzada</span>
   <span class="fil">Fil · fílica</span>
@@ -43,21 +49,29 @@ El visor condensa la tesis. No es necesario seguir el orden capitular:
 
 <div class="ruta" markdown>
 
-[**1 · Mapa de lectura**
-<span>Correspondencia entre preguntas de investigación y secciones del visor.</span>](guia.md)
+[**1 · Probar en el navegador**
+<span>GeoIA: PCA, firma de `MOD_ALT`, lienzo RF/kNN/red/SVM y predicción 40/60.</span>](https://geoia.site/dominios-ml/)
 
-[**2 · Resumen y abstract**
-<span>Problema, seis dominios y desempeño relativo de los clasificadores.</span>](00-resumen.md)
+[**2 · Mapa de lectura**
+<span>Correspondencia entre preguntas de investigación y secciones del visor.</span>](guia.md)
 
 [**3 · Asignación de dominios**
 <span>Etapa crítica: clustering espectral y corte geológico de `MOD_ALT`.</span>](03-asignacion-dominios.md)
 
-[**4 · Replicación experimental**
-<span>Orange, Google Colab o pipeline en Python sobre el conjunto sintético.</span>](09-orange-colab.md)
+[**4 · Cuadernos y Python**
+<span>Colab, Orange o `alteration_ml` sobre el conjunto sintético.</span>](09-orange-colab.md)
 
 </div>
 
 <div class="grid cards" markdown>
+
+-   :material-flask: **Réplica GeoIA**
+
+    ---
+
+    Mismo método de la tesis, en el navegador: 15 minerales, firmar `MOD_ALT`, Test & Score y CSV de predicción.
+
+    [:octicons-arrow-right-24: geoia.site/dominios-ml](https://geoia.site/dominios-ml/)
 
 -   :material-book-open-page-variant: **Tesis resumida**
 
@@ -67,21 +81,13 @@ El visor condensa la tesis. No es necesario seguir el orden capitular:
 
     [:octicons-arrow-right-24: Abrir el visor](guia.md)
 
--   :material-palette-swatch: **Orange o Google Colab**
+-   :material-notebook: **Cuadernos (Colab)**
 
     ---
 
-    Reproducción del experimento sin entorno Python local (lienzo de widgets o cuaderno en la nube).
+    Pipeline completo y EDA / no supervisado / supervisado, alineados con las fases de GeoIA.
 
-    [:octicons-arrow-right-24: Protocolo experimental](09-orange-colab.md)
-
--   :material-language-python: **Implementación en Python**
-
-    ---
-
-    Paquete `alteration_ml`, datos sintéticos, pruebas automáticas y plantilla para sondajes propios.
-
-    [:octicons-arrow-right-24: Replicar el pipeline](06-replicacion.md)
+    [:octicons-arrow-right-24: Orange, Colab y cuadernos](09-orange-colab.md)
 
 </div>
 
@@ -89,11 +95,10 @@ El visor condensa la tesis. No es necesario seguir el orden capitular:
 
 ```mermaid
 flowchart LR
-  A[Espectro SWIR/VNIR] --> C[No supervisado<br/>PCA · K-Means]
-  B[Geoquímica] --> D[Supervisado<br/>RF · kNN · MLP · SVM]
-  C --> G[Geólogo firma<br/>MOD_ALT]
-  G --> D
-  D --> E[Predicción 3D]
+  A[Logueo + espectro<br/>15 minerales] --> B[Fase 1<br/>PCA · polígono · MOD_ALT]
+  C[Geoquímica] --> D[Fase 2<br/>RF · kNN · red · SVM]
+  B --> D
+  D --> E[Fase 3<br/>60 % sin logueo]
 ```
 
 <figure markdown>
@@ -120,7 +125,9 @@ Asesor: [0009-0009-5452-3636](https://orcid.org/0009-0009-5452-3636).
 <a href="https://www.linkedin.com/in/geomin"><img src="assets/icon-linkedin.svg" alt=""/> linkedin.com/in/geomin</a>
 </div>
 
-Sitio publicado:
-[jhon21geo.github.io/geologia-ML-dominios-alteracion](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/).[^url]
+Sitio de lectura:
+[jhon21geo.github.io/geologia-ML-dominios-alteracion](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/).
+Réplica interactiva:
+[geoia.site/dominios-ml](https://geoia.site/dominios-ml/).[^url]
 
 [^url]: La dirección `jhonatanmallma.github.io/...` no corresponde a este repositorio (muestra 404).

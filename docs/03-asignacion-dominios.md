@@ -34,6 +34,12 @@ flowchart TD
    no abre un dominio.
 4. Solo los tramos firmados entran al entrenamiento del Random Forest.
 
+En la réplica [GeoIA](https://geoia.site/dominios-ml/) esa firma se hace con un
+**polígono sobre el PCA** de los collares logueados (40 %). El clúster propone
+un dominio (logueo mayoritario); tú lo editas. Solo las muestras seleccionadas
+reciben `MOD_ALT` y pasan a la Fase 2. El 60 % de sondajes queda ciego para
+Test & Score y para la predicción.
+
 ## Reglas de ensamble (propuesta) y corte geológico
 
 Las reglas salen de la tesis; el corte es humano. ArgAvd_2 (alunita mayor que

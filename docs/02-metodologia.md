@@ -32,9 +32,12 @@ flowchart LR
 6. **Predicción 3D.** El mejor modelo etiqueta el resto de intervalos.
 
 En la tesis el modelado se hizo en **Orange** (lienzo de widgets, sin escribir
-código). Este repositorio reproduce las mismas etapas en scikit-learn, y las
-deja también en [Google Colab](09-orange-colab.md) para quien no instala
-Python.
+código). Este repositorio reproduce las mismas etapas en scikit-learn y en
+[Google Colab](09-orange-colab.md). La réplica interactiva
+[GeoIA](10-geoia-dominios.md) corre el mismo esquema en el navegador: 15
+variables espectrales (13 SWIR + hematita/goethita), firma de `MOD_ALT` en el
+PCA y reserva **40/60 de collares** (la tesis partió 80/20 sobre tramos
+etiquetados).
 
 ## 3.2 Datos espectrales
 

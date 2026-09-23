@@ -12,16 +12,21 @@ publicados, para que cualquiera pueda ejecutar, criticar y adaptar el método.
 
 [![Tests](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/actions/workflows/tests.yml/badge.svg)](https://github.com/jhon21geo/geologia-ML-dominios-alteracion/actions/workflows/tests.yml)
 
-## Visor de lectura
+## Visor de lectura y réplica en vivo
+
+**Probar el método (navegador):**
+[https://geoia.site/dominios-ml/](https://geoia.site/dominios-ml/)
+
+PCA, firma de `MOD_ALT`, lienzo tipo Orange (RF / kNN / red / SVM) y
+predicción del 60 % de sondajes sin logueo. No instala nada; no envía tus
+tablas a un servidor.
 
 **Tesis resumida en línea:**
 [https://jhon21geo.github.io/geologia-ML-dominios-alteracion/](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/)
 
-Empieza por el [mapa de lectura](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/guia/):
-qué página responde a qué pregunta, la distinción clúster ≠ dominio, y cómo
-probar el método en Orange o Colab. El PDF (páginas 1–151) queda en solo
-lectura, con zoom a la rueda del ratón. No uses `jhonatanmallma.github.io`
-(esa cuenta no sirve este repositorio).
+Empieza por el [mapa de lectura](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/guia/)
+o por la [réplica GeoIA](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/10-geoia-dominios/).
+El PDF (páginas 1–151) queda en solo lectura.
 
 ## Qué resuelve
 
@@ -41,12 +46,14 @@ sintéticos el ranking se recalcula cada vez que corres el pipeline.
 
 **Sin instalar Python**
 
-- Lienzo de widgets, como la tesis:
+- Réplica interactiva (fases 1–3, tus CSV o el sintético):
+  **[geoia.site/dominios-ml](https://geoia.site/dominios-ml/)**
+- Un clic en la nube:
+  [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jhon21geo/geologia-ML-dominios-alteracion/blob/main/notebooks/00_colab_pipeline.ipynb)
+- Lienzo original de la tesis:
   **[Orange 3](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/#orange-como-en-la-tesis)**
-- Un clic en el navegador:
-  [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jhon21geo/geologia-ML-dominios-alteracion/blob/cursor/metodologia-tesis-sintetica-fd6d/notebooks/00_colab_pipeline.ipynb)
 
-Guía: [Orange y Google Colab](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/)
+Guía: [Orange, Colab y cuadernos](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/)
 
 **Con Python en tu máquina**
 
@@ -95,10 +102,11 @@ tests/
 
 ## Documentación
 
+- **Réplica en el navegador (GeoIA):** [https://geoia.site/dominios-ml/](https://geoia.site/dominios-ml/)
 - **Visor de lectura (tesis resumida y PDF):** [https://jhon21geo.github.io/geologia-ML-dominios-alteracion/](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/)
 - PDF (págs. 1–151): [https://jhon21geo.github.io/geologia-ML-dominios-alteracion/tesis-pdf/](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/tesis-pdf/)
 - Cómo aplicar el método a *tus* sondajes: [https://jhon21geo.github.io/geologia-ML-dominios-alteracion/06-replicacion/](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/06-replicacion/)
-- **Sin programar:** [Orange y Google Colab](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/)
+- **Cuadernos y Orange:** [Orange, Colab y cuadernos](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/)
 
 ## Contacto
 

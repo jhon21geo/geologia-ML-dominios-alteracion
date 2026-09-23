@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Réplica en el navegador (GeoIA)
+    url: https://geoia.site/dominios-ml/
+    about: PCA, firma de MOD_ALT, lienzo RF/kNN/red/SVM y predicción 40/60.
   - name: Documentación / visor de lectura
     url: https://jhon21geo.github.io/geologia-ML-dominios-alteracion/
     about: Tesis resumida, PDF y guía de replicación.

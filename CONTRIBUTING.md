@@ -3,7 +3,8 @@
 Este repositorio está pensado para que terceros **lean la metodología, la ejecuten
 con datos sintéticos y la repliquen en sus propios proyectos**.
 
-Si no programas en Python: usa **Orange** o **Google Colab**
+Si no programas en Python: usa **[GeoIA](https://geoia.site/dominios-ml/)**,
+**Orange** o **Google Colab**
 ([guía](https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/)).
 
 Contacto del autor: [jhonatangeo21@gmail.com](mailto:jhonatangeo21@gmail.com) ·

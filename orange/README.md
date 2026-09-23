@@ -3,12 +3,19 @@
 La tesis se ejecutó en **Orange 3**. Este directorio no sustituye el programa:
 sirve para quien replica el lienzo sin escribir Python.
 
+La réplica más avanzada, en el navegador (mismo esquema, Fase 2 como lienzo),
+está en https://geoia.site/dominios-ml/
+
 1. Instala Orange: https://orangedatamining.com/download/
 2. Carga el CSV sintético:
    https://raw.githubusercontent.com/jhon21geo/geologia-ML-dominios-alteracion/main/data/synthetic/synthetic_merged.csv
    (si clonaste el repo, también está en `../data/synthetic/synthetic_merged.csv`)
 3. Sigue el recetario en la documentación:
    https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/
+
+Widgets del flujo original: File, Select Columns, Preprocess, PCA,
+Hierarchical Clustering, k-Means, Data Sampler, Random Forest, kNN,
+Neural Network, SVM, Test and Score, Confusion Matrix, ROC Analysis.
 
 Widgets del flujo original: File, Select Columns, Preprocess, PCA,
 Hierarchical Clustering, k-Means, Data Sampler, Random Forest, kNN,
