@@ -430,12 +430,15 @@
   font-weight: 400;
 }
 
-.siguiente {
-  margin-top: 2rem;
-  padding: 0.9rem 1rem;
-  border-left: 4px solid #a4912d;
-  background: rgba(96, 22, 30, 0.05);
-  border-radius: 0 4px 4px 0;
+.md-typeset .md-button--primary {
+  background: #60161e;
+  border-color: #a4912d;
+  color: #f7f4ee;
+}
+
+.md-typeset .md-button--primary:hover {
+  background: #4a1018;
+  color: #fff;
 }
 
 .siguiente p {

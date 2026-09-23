@@ -5,8 +5,9 @@ puedan discutirlo y llevarlo a sus proyectos** sin pedir acceso a una unidad.
 
 !!! tip "Antes de opinar"
     Conviene haber visto [cómo se asignan los dominios](03-asignacion-dominios.md)
-    y, si puedes, haber corrido [Orange o Colab](09-orange-colab.md). Así la
-    crítica apunta al método y no a un malentendido de k=5 vs seis dominios.
+    y, si puedes, haber corrido [GeoIA](https://geoia.site/dominios-ml/) o
+    [Colab](09-orange-colab.md). Así la crítica apunta al método y no a un
+    malentendido de k=5 vs seis dominios.
 
 ## Canales
 
@@ -20,7 +21,10 @@ puedan discutirlo y llevarlo a sus proyectos** sin pedir acceso a una unidad.
 
 ## Cómo probar el método si no programas
 
-Orange (lienzo) o Google Colab:
+Réplica en el navegador:
+[https://geoia.site/dominios-ml/](https://geoia.site/dominios-ml/)
+
+Orange (lienzo original) o Google Colab:
 https://jhon21geo.github.io/geologia-ML-dominios-alteracion/09-orange-colab/
 
 ## Contacto

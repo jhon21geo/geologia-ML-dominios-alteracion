@@ -32,8 +32,9 @@
 ## Qué hace este visor
 
 Resume la tesis para lectura pública. El [PDF (págs. 1–151)](tesis-pdf.md) sigue
-disponible. El [código](06-replicacion.md) replica el método sin publicar la
-unidad de calibración.
+disponible. El [código](06-replicacion.md) y la
+[réplica GeoIA](https://geoia.site/dominios-ml/) reproducen el método sin
+publicar la unidad de calibración.
 
 <div class="siguiente" markdown>
 

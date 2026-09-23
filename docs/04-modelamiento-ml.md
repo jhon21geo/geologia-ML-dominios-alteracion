@@ -90,6 +90,6 @@ otro universo, con ruido y transiciones programadas).
 <div class="siguiente" markdown>
 
 **Siguiente:** [Conclusiones](05-conclusiones.md), o
-[prueba el flujo](09-orange-colab.md) en Orange o Colab.
+[prueba el flujo](https://geoia.site/dominios-ml/) en GeoIA / [Colab](09-orange-colab.md).
 
 </div>

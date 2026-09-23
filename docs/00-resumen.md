@@ -16,6 +16,9 @@
 
 El detalle de cómo se firman está en
 [El geólogo asigna los dominios](03-asignacion-dominios.md).
+La réplica en el navegador
+([geoia.site/dominios-ml](https://geoia.site/dominios-ml/)) deja firmar esos
+seis códigos sobre el PCA, con 15 minerales y el CSV sintético de este repo.
 
 === "Resumen"
 

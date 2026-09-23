@@ -65,7 +65,8 @@ nav:
     - Referencias: 08-referencias.md
     - PDF (págs. 1–151): tesis-pdf.md
   - Probar el método:
-    - Orange y Google Colab: 09-orange-colab.md
+    - Réplica en el navegador (GeoIA): 10-geoia-dominios.md
+    - Orange, Colab y cuadernos: 09-orange-colab.md
     - Replicar en Python: 06-replicacion.md
     - Opiniones y réplicas: 07-contribuciones.md
 
@@ -101,6 +102,9 @@ extra:
     - icon: fontawesome/solid/building-columns
       link: https://www.uni.edu.pe/
       name: Universidad Nacional de Ingeniería
+    - icon: fontawesome/solid/flask
+      link: https://geoia.site/dominios-ml/
+      name: Réplica en el navegador (GeoIA)
     - icon: fontawesome/brands/github
       link: https://github.com/jhon21geo/geologia-ML-dominios-alteracion
       name: GitHub
